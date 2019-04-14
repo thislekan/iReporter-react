@@ -1,0 +1,29 @@
+.filter-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: calc(100% - 1rem);
+    margin-top: 1rem;
+    padding: .5rem;
+}
+.filter-list-btn{
+    height: 3.5em;
+    width: 10rem;
+    background-color: #117d5a;
+    border: 1px solid #117d5a;
+    border-radius: .25rem;
+    outline: none;
+    color: white;
+    letter-spacing: 1px;
+}
+.cancel-search-btn{
+    height: 3.5rem;
+    background-color: #cf4c41;
+    border: 1px solid #cf4c41;
+    width: 12rem;
+    margin-left: .5rem;
+    border-radius: .25rem;
+    outline: none;
+    color: white;
+    letter-spacing: 1px;
+}

@@ -1,0 +1,59 @@
+.report-details{
+    padding: .6rem .75rem;
+    display: grid;
+    grid-template-columns: 10rem auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.report-details p{
+    margin: .5rem 0;
+    margin-left: 1.5rem;
+    text-align: right;
+}
+.incident-intro{
+    display: flex;
+    align-items: center;
+}
+.incident-intro svg{
+    color: #117d5a;
+}
+.map-region{
+    height: 20rem;
+    border: 1px solid;
+    position: relative;
+}
+.map{
+    margin: 2rem 0;
+}
+.content-wrapper{
+    height: 100%;
+    margin: 1rem 0;
+}
+.image-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    margin-top: 1rem;
+}
+.image-container img{
+    height: 14.5rem;
+    width: 100%;
+    object-fit: scale-down;
+    object-position: center;
+    border: 1px solid rgba(29, 57, 74, 0.35);
+    border-radius: .25rem;
+}
+@media only screen and (min-width: 700px) {
+  .map-region{
+        height: 30rem;
+    }
+    .image-container img{
+        height: 12rem;
+    }
+}
+@media only screen and (min-width: 900px){
+  .image-container img{
+        height: 22rem;
+    }
+}

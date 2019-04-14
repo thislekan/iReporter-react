@@ -1,0 +1,20 @@
+.select-report{
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+    justify-content: space-evenly;
+}
+.select-report select{
+    height: 3.5rem;
+    background: rgba(29, 57, 74, 0.1);
+    border: 1px solid rgba(29,57,74,0.1);
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    outline: none;
+    margin: unset
+}
+@media only screen and (min-width: 700px){
+  .select-report select{
+        width: 25rem;
+    }
+}

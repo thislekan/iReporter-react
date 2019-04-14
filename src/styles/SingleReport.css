@@ -1,0 +1,65 @@
+.report-body-wrapper{
+  border-radius: .25rem;
+  margin: 2.5rem 0;
+  background: white;
+  box-shadow: 0px 2px 6px 0px hsla(260, 6%, 57%);
+  padding: 0 1rem;
+  position: relative;
+  height: 30rem;
+  font-size: 1.4rem;
+}
+.report-details{
+    padding: .6rem .75rem;
+    display: grid;
+    grid-template-columns: 10rem auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.report-details p{
+    margin: .5rem 0;
+    margin-left: 1.5rem;
+    text-align: right;
+}
+.incident-intro{
+    display: flex;
+    align-items: center;
+}
+.incident-intro svg{
+    color: #117d5a;
+}
+.bottom-div{
+    background: hsla(210, 9%, 96%, 1);
+    border-radius: 0 0 .25rem .25rem;
+    padding: 0 1rem;
+    position: absolute;
+    margin: unset;
+    left: 0;
+    bottom: 0;
+    width: calc(100% - 2rem);
+}
+.btn-div{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn-div button{
+    height: 3rem;
+    border-radius: .25rem;
+    margin: 1rem 0;
+    margin-left: 1rem;
+    width: 6.5rem;
+}
+.view-btn{
+    background: #23948c;
+    border: 1px solid #23948c;
+    color: white;
+}
+.edit-btn{
+    background: #117d5a;
+    border: 1px solid #117d5a;
+    color: white;
+}
+.delete-btn{
+    border: 1px solid #cf4241;
+    background: #cf4c41;
+    color: white;
+}
