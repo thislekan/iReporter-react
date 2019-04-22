@@ -1,5 +1,5 @@
 import initialState from '../initialState';
-import { signupType } from '../actions/signupActions';
+import { authType } from '../actions/authActions';
 
 /**
  *
@@ -8,27 +8,30 @@ import { signupType } from '../actions/signupActions';
  * @returns {Object} - The current user state
  */
 const signupReducer = (state = initialState.user, action) => {
+  let displaymessage = 'User successfully logged in';
+  const { token, user, route } = action;
   switch (action.type) {
-    case signupType.success:
+    case authType.success:
+      if (route === 'user/create') displaymessage = 'Your signup was successful';
       return {
         ...state,
-        token: action.token,
+        token,
         isLoggedIn: true,
         authStatus: true,
-        message: 'Your signup was successful',
+        message: displaymessage,
         isLoading: false,
-        ...action.user,
+        ...user,
       };
-    case signupType.loading:
+    case authType.loading:
       return {
         ...state,
         isLoading: action.status,
       };
-    case signupType.failure:
+    case authType.failure:
       return {
         ...state,
         token: undefined,
-        message: action.errorResponse,
+        message: action.message,
         isLoading: false,
         isLoggedIn: false,
         authStatus: false,

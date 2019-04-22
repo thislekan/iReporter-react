@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import signupReducer from './signupReducer';
+import authReducer from './authReducer';
 
 
 /**
@@ -7,5 +7,5 @@ import signupReducer from './signupReducer';
  * @exports Object - The combination of reducers across the app
  */
 export default combineReducers({
-  user: signupReducer,
+  user: authReducer,
 });

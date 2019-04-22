@@ -1,0 +1,18 @@
+.loader_div{
+  position: absolute;
+  height: 30rem;
+  width: calc(100% - 2rem);
+  z-index: 10;
+  /* background: white; */
+  display: flex;
+  align-items: center;
+  top: calc(50% - 15rem);
+}
+@media screen and (min-width: 600px){
+  .loader_div{
+    height: 100%;
+    top: 0;
+    width: 100%;
+    left: 0;
+  }
+}

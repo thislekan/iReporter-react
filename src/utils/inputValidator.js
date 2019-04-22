@@ -2,14 +2,6 @@ import validator from 'validator';
 
 const validateFields = (payload, route) => {
   let errorMessage;
-  // if (!payload.email
-  //   || !payload.password
-  //   || !payload.lastName
-  //   || !payload.firstName
-  //   || !payload.confirmPassword) {
-  //   errorMessage = 'All input fields are required';
-  //   return errorMessage;
-  // }
 
   const emptyEmailCheck = validator.isEmpty(payload.email);
   if (emptyEmailCheck) {

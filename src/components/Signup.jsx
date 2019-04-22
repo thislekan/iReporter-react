@@ -1,25 +1,32 @@
-/* eslint-disable no-shadow */
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Modal from 'react-modal';
 import * as authSelector from '../store/selectors/authSelector';
-import userSignup from '../store/actions/signupActions';
+import authenticateUser from '../store/actions/authActions';
 import validateFields from '../utils/inputValidator';
 import style from '../styles/SignUp.css';
 import quietImage from '../media/quiet.jpg';
+import AlertMessage from './reuseables/AlertMessage.jsx';
+import Loader from './reuseables/Loader.jsx';
 
-Modal.setAppElement('#app');
+
 class Signup extends React.Component {
   static propTypes = {
-    userSignup: PropTypes.func.isRequired,
+    authenticateUser: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
-    // location: PropTypes.object.isRequired,
     message: PropTypes.string,
     authStatus: PropTypes.string,
     isLoading: PropTypes.bool,
+    isAdmin: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    isAdmin: false,
+    authStatus: '',
+    isLoading: false,
+    message: '',
   }
 
   constructor(props) {
@@ -32,15 +39,18 @@ class Signup extends React.Component {
       lastName: '',
       message: '',
       openModal: false,
+      isAdmin: false,
     };
   }
 
-  // eslint-disable-next-line consistent-return
-  componentWillReceiveProps(nextProps) {
-    const { history } = this.props;
-    const { message } = nextProps;
-    if (message === 'Your signup was successful') return history.push('/user');
-    if (message !== 'Your signup was successful') return this.setState({ message, openModal: true });
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.message) return null;
+    const {
+      message, isLoading, authStatus, isAdmin,
+    } = nextProps;
+    return {
+      message, isLoading, authStatus, isAdmin,
+    };
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value.trim() });
@@ -55,15 +65,19 @@ class Signup extends React.Component {
   }
 
   // eslint-disable-next-line consistent-return
-  submitData = () => {
-    const { userSignup } = this.props;
+  submitData = (e) => {
+    const { authenticateUser: signupUser } = this.props;
     const payload = this.state;
-    if (this.validateInput(payload, '/signup')) return userSignup(payload);
+    e.preventDefault();
+    if (this.validateInput(payload, '/signup')) return signupUser({ payload, route: 'user/create' });
   }
 
   resetState = () => this.setState({ message: '', openModal: false });
 
   render() {
+    const { message, openModal, isLoading } = this.state;
+    const { history } = this.props;
+    if (message === 'Your signup was successful') return history.push('/user');
     return (
       <div className={style.signup__body}>
         <div className={style.content}>
@@ -77,30 +91,15 @@ class Signup extends React.Component {
                   <div><Link className={style.links} to={'/signup'}>Sign Up</Link></div>
                   <div><Link className={style.links} to={'/login'}>Log In</Link></div>
                 </div>
-                {this.state.openModal && (
-                  <Modal
-                    isOpen={this.state.openModal}
-                    contentLabel='Selected Option'
-                    onRequestClose={this.resetState}
-                    closeTimeoutMS={200}
-                    className='modal'
-                  >
-                    <h3 className='modal__title'>Selected Option</h3>
-                    {this.state.message && <p className='modal__body'>{this.state.message}</p>}
-                    <button
-                      className='button'
-                      onClick={this.resetState}
-                    >Okay</button>
-                  </Modal>
-                )}
+                {isLoading && <Loader isLoading={isLoading} />}
+                <AlertMessage
+                  message={message}
+                  resetState={this.resetState}
+                  openModal={openModal}
+                />
                 <form
                   className={style.form__inputs}
-                  onSubmit={
-                    (e) => {
-                      e.preventDefault();
-                      this.submitData();
-                    }
-                  }
+                  onSubmit={this.submitData}
                 >
                   <div className={style.inputDiv}>
                     <label htmlFor="name">LAST NAME</label>
@@ -172,10 +171,11 @@ class Signup extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   message: authSelector.getAuthMessage,
-  loginStatus: authSelector.getAuthStatus,
+  authStatus: authSelector.getAuthStatus,
   isLoading: authSelector.getAuthIsLoading,
+  isAdmin: authSelector.getAuthIsAdmin,
 });
 
-const mapDispacthToProps = { userSignup };
+const mapDispacthToProps = { authenticateUser };
 
 export default connect(mapStateToProps, mapDispacthToProps)(Signup);
