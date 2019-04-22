@@ -40,16 +40,16 @@
   margin-top: .25rem;
 }
 .homepage__intro{
-    margin: 0;
-    font-size: 2.5rem;
-    white-space: pre-line;
+  margin: 15px;
+  font-size: 2.5rem;
+  white-space: pre-line;
 }
 .endText{
     color: #cf4241;
 }
 .homepage section{
-    /* height: 100vh; */
-    text-align: center;
+  /* height: 100vh; */
+  text-align: center;
 }
 .description{
     height: 115vh;
@@ -197,54 +197,57 @@ footer{
   }
 }
 @media screen and (min-width: 700px){
-    .welcome .paddedBody{
-        display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    }
-    .description,
-    .process,
-    .stories{
-        height: 50vh;
-    }
-    .paddedBody{
-        padding: 0 5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
-    .descriptionBody, 
-    .processBody,
-    .storiesBreakdown{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 3rem;
-    }
-    .subHeader{
-        text-align: left;
-    }
-    .processBody img{
-        height: 200px;
-        margin-top: 1rem;
-    }
-    footer{
-        height: 15vh;
-        padding: 0 5rem;
-    }
+  .welcome .paddedBody{
+      display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  }
+  .description,
+  .process,
+  .stories{
+      height: 50vh;
+  }
+  .paddedBody{
+      padding: 0 5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+  }
+  .descriptionBody, 
+  .processBody,
+  .storiesBreakdown{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 3rem;
+  }
+  .subHeader{
+      text-align: left;
+  }
+  .processBody img{
+      height: 200px;
+      margin-top: 1rem;
+  }
+  .homepage__intro{
+    width: 27rem;
+  }
+  footer{
+      height: 15vh;
+      padding: 0 5rem;
+  }
 }
 @media screen and (min-width: 900px){
-    .welcome .paddedBody{
-        grid-column-gap: 10rem;
-    }
-    .paddedBody{
-        padding: 0 15rem;
-    }
-    footer{
-        height: 30vh;
-        display: grid;
+  .welcome .paddedBody{
+    grid-column-gap: 10rem;
+  }
+  .paddedBody{
+    padding: 0 15rem;
+  }
+  footer{
+    height: 30vh;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 10rem;
-    }
+  }
 }

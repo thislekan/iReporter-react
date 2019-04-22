@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import style from '../styles/HomePage.css';
 import phoneImage from '../media/phone-1682317_1280.png';
@@ -6,7 +7,8 @@ import screenshot from '../media/shot.png';
 import image1 from '../media/ryan-tang-281277-unsplash.jpg';
 import megaphone from '../media/megaphone.jpg';
 
-function HomePage() {
+function HomePage(props) {
+  const { history } = props;
   return (
     <div className={style.homepage}>
       <section className={style.welcome}>
@@ -16,7 +18,13 @@ function HomePage() {
             <span>  </span>
               <span className={style.endText}>end</span> corruption.
           </h1>
-            <button>Sign Up</button>
+            <button
+              onClick={
+                () => history.push('/signup')
+              }
+            >
+              Sign Up
+            </button>
           </div>
           <div className={style.welcomeInvite}>
             <div className={style.imgDiv}>
@@ -115,5 +123,9 @@ function HomePage() {
     </div>
   );
 }
+
+HomePage.propTypes = {
+  history: PropTypes.object.isRequired,
+};
 
 export default HomePage;
