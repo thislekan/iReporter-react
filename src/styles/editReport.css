@@ -1,0 +1,55 @@
+.report-details {
+  padding: .6rem .75rem;
+  display: grid;
+  grid-template-columns: 10rem auto;
+  align-items: center;
+  justify-content: space-between;
+}
+.incident-intro {
+  display: flex;
+  align-items: center;
+}
+.incident-intro svg{
+  color: #117d5a;
+}
+.report-details p {
+  margin: .5rem 0;
+  margin-left: 1.5rem;
+  text-align: right;
+}
+.comment-div textarea{
+  height: 7rem;
+  width: 100%;
+  border-radius: .25rem;
+  border: 1px solid rgba(29, 57, 74, 0.3);
+  outline: none;
+}
+.edit-btn-div{
+  margin: 2rem 0;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* border: 1px solid rgba(29, 57, 74, 0.1); */
+  padding: 0 .5rem;
+}
+.edit-btn{
+  height: 3rem;
+  width: 11rem;
+  border-radius: .25rem;
+  outline: none;
+}
+.edit-location {
+  background: #23948c;
+  border: 1px solid #23948c;
+  color: white;
+}
+.edit-comment {
+  background-color: #117d5a;
+  color: white;
+  border: 1px solid #117d5a;
+  margin-right: 1rem;
+}
+.location-div h4{
+  margin: 10px 0;
+}

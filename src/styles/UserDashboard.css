@@ -136,7 +136,7 @@ h4{
     margin-top: 4rem;
     height: 100%
 }
-.delete-prompt{
+/* .delete-prompt{
     position: fixed;
     height: 15rem;
     width: calc(100% - 4rem);
@@ -146,7 +146,7 @@ h4{
     background: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
     display: none;
-}
+} */
 .prompt-body{
     display: flex;
     flex-direction: column;
@@ -167,6 +167,25 @@ h4{
     background-color: #dddddd;
     border: 1px solid #dddddd;
     box-shadow: 3px 3px 4px -5px #bdbaba;
+}
+.delete-modal-box{
+    height: 30rem;
+    position: absolute;
+    top: calc(50% - 15rem);
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+}
+.delete-btn{
+    border: 1px solid #cf4241;
+    background: #cf4c41;
+    color: white;
 }
 .delete-btn-parent-div{
     display: flex;
@@ -294,6 +313,12 @@ video{
     position: absolute;
 }
 @media only screen and (min-device-width: 700px){
+    .delete-modal-box{
+        width: 30rem;
+        left: calc(50% - 15rem);
+        height: 20rem;
+        top: calc(50% - 10rem);
+    }
     .control{
         display: grid;
         grid-template-columns: 26rem auto;
@@ -321,10 +346,10 @@ video{
     .create{
         height: 80vh;
     }
-    .delete-prompt{
+    /* .delete-prompt{
         width: calc(100% - 45rem);
         top: calc(50vh - 7.5rem);
-    }
+    } */
     #filter-div{
         width: unset;
     }
@@ -345,9 +370,9 @@ video{
     .overlay{
         width: calc(100% - 20rem);
     }
-    .delete-prompt {
+    /* .delete-prompt {
         width: calc(100% - 70rem);
-    }
+    } */
     .create{
         height: 82vh;
     }

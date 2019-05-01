@@ -7,7 +7,7 @@ import { authType } from '../actions/authActions';
  * @param {*} action - The action payload
  * @returns {Object} - The current user state
  */
-const signupReducer = (state = initialState.user, action) => {
+const authReducer = (state = initialState.user, action) => {
   let displaymessage = 'User successfully logged in';
   const { token, user, route } = action;
   switch (action.type) {
@@ -26,6 +26,7 @@ const signupReducer = (state = initialState.user, action) => {
       return {
         ...state,
         isLoading: action.status,
+        message: '',
       };
     case authType.failure:
       return {
@@ -48,4 +49,4 @@ const signupReducer = (state = initialState.user, action) => {
   }
 };
 
-export default signupReducer;
+export default authReducer;

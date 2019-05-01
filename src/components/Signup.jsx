@@ -92,11 +92,11 @@ class Signup extends React.Component {
                   <div><Link className={style.links} to={'/login'}>Log In</Link></div>
                 </div>
                 {isLoading && <Loader isLoading={isLoading} />}
-                <AlertMessage
+                {message && <AlertMessage
                   message={message}
                   resetState={this.resetState}
                   openModal={openModal}
-                />
+                />}
                 <form
                   className={style.form__inputs}
                   onSubmit={this.submitData}
