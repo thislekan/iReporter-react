@@ -1,5 +1,8 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+const MomentLocalePlugin = require('moment-locales-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: './src/index.html',
@@ -7,9 +10,15 @@ const htmlPlugin = new HtmlWebPackPlugin({
   title: 'iReporter-v1',
 });
 
+const dotenvPlugin = new Dotenv();
+const envLoaderPlugin = new webpack.DefinePlugin({
+  'process.env.API_URL': JSON.stringify(process.env.API_URL),
+});
+const usedMomemntPlugin = new MomentLocalePlugin();
+
 module.exports = {
   entry: './src/index.jsx',
-  plugins: [htmlPlugin],
+  plugins: [htmlPlugin, dotenvPlugin, envLoaderPlugin, usedMomemntPlugin],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -29,10 +38,6 @@ module.exports = {
         loader: ['babel-loader', 'eslint-loader'],
         test: /\.jsx$/,
       },
-      // {
-      //   test: /\.s?css$/,
-      //   use: ['style-loader', 'css-loader', 'sass-loader'],
-      // },
       {
         test: /\.css$/,
         use: [

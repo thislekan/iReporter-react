@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
 import style from '../styles/login.css';
@@ -40,14 +40,19 @@ class Login extends React.Component {
     };
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.message) return null;
+  static getDerivedStateFromProps(nextProps) {
     const {
       message, isLoading, authStatus, isAdmin,
     } = nextProps;
+    if (!message) return null;
     return {
       message, isLoading, authStatus, isAdmin,
     };
+  }
+
+  componentDidMount() {
+    const { message } = this.state;
+    if (message !== 'User successfully logged in') this.setState({ openModal: true });
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value.trim() });
@@ -77,9 +82,6 @@ class Login extends React.Component {
     const {
       message, openModal, isLoading, isAdmin,
     } = this.state;
-    const { history } = this.props;
-    if (message === 'User successfully logged in') return history.push('/user');
-    if (isAdmin) return history.push('/admin');
     return (
       <div className={style.login__body}>
         <div className={style.content}>
@@ -88,12 +90,18 @@ class Login extends React.Component {
               <img src={quietImage} alt="" />
             </div>
             <div id="form">
+              {(message !== 'User successfully logged in') ? null : (
+                <Redirect
+                  push
+                  to={(isAdmin) ? '/admin' : '/user'}
+                />
+              )}
               {isLoading && <Loader isLoading={isLoading} />}
-              <AlertMessage
+              {message && <AlertMessage
                 message={message}
                 resetState={this.resetState}
                 openModal={openModal}
-              />
+              />}
               <div className={style.form__body}>
                 <div className={style.form__navigation}>
                   <div><Link className={style.links} to={'/signup'}>Sign Up</Link></div>
@@ -141,7 +149,7 @@ class Login extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   message: authSelector.getAuthMessage,
-  loginStatus: authSelector.getAuthStatus,
+  authStatus: authSelector.getAuthStatus,
   isLoading: authSelector.getAuthIsLoading,
   isAdmin: authSelector.getAuthIsAdmin,
 });
