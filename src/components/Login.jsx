@@ -7,11 +7,11 @@ import style from '../styles/login.css';
 import quietImage from '../media/quiet.jpg';
 import validateFields from '../utils/inputValidator';
 import * as authSelector from '../store/selectors/authSelector';
-import authenticateUser from '../store/actions/authActions';
+import { authenticateUser } from '../store/actions/authActions';
 import AlertMessage from './reuseables/AlertMessage.jsx';
 import Loader from './reuseables/Loader.jsx';
 
-class Login extends React.Component {
+export class Login extends React.Component {
   static propTypes = {
     authenticateUser: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
@@ -45,6 +45,7 @@ class Login extends React.Component {
       message, isLoading, authStatus, isAdmin,
     } = nextProps;
     if (!message) return null;
+
     return {
       message, isLoading, authStatus, isAdmin,
     };
@@ -53,6 +54,7 @@ class Login extends React.Component {
   componentDidMount() {
     const { message } = this.state;
     if (message !== 'User successfully logged in') this.setState({ openModal: true });
+    return true;
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value.trim() });
@@ -90,12 +92,10 @@ class Login extends React.Component {
               <img src={quietImage} alt="" />
             </div>
             <div id="form">
-              {(message !== 'User successfully logged in') ? null : (
-                <Redirect
-                  push
-                  to={(isAdmin) ? '/admin' : '/user'}
-                />
-              )}
+              {(message !== 'User successfully logged in') ? null : <Redirect
+                push
+                to={(isAdmin) ? '/admin' : '/user'}
+              />}
               {isLoading && <Loader isLoading={isLoading} />}
               {message && <AlertMessage
                 message={message}
@@ -117,7 +117,8 @@ class Login extends React.Component {
                       type="email"
                       name="email"
                       id="email"
-                      onBlur={this.handleChange}
+                      value={this.state.email}
+                      onChange={this.handleChange}
                     />
                   </div>
                   <div className={style.inputDiv}>
@@ -126,7 +127,8 @@ class Login extends React.Component {
                       type="password"
                       name="password"
                       id="password"
-                      onBlur={this.handleChange}
+                      value={this.state.password}
+                      onChange={this.handleChange}
                     />
                   </div>
                   <div className="btn-div">

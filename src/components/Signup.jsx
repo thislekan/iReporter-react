@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as authSelector from '../store/selectors/authSelector';
-import authenticateUser from '../store/actions/authActions';
+import { authenticateUser } from '../store/actions/authActions';
 import validateFields from '../utils/inputValidator';
 import style from '../styles/SignUp.css';
 import quietImage from '../media/quiet.jpg';
@@ -107,7 +107,8 @@ class Signup extends React.Component {
                       type="text"
                       name="lastName"
                       id="last-name"
-                      onBlur={this.handleChange}
+                      onChange={this.handleChange}
+                      value={this.state.lastName}
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -117,7 +118,8 @@ class Signup extends React.Component {
                       type="text"
                       name="firstName"
                       id="first-name"
-                      onBlur={this.handleChange}
+                      onChange={this.handleChange}
+                      value={this.state.firstName}
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -127,7 +129,8 @@ class Signup extends React.Component {
                       type="email"
                       name="email"
                       id="email"
-                      onBlur={this.handleChange}
+                      value={this.state.email}
+                      onChange={this.handleChange}
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -137,7 +140,8 @@ class Signup extends React.Component {
                       type="password"
                       name="password"
                       id="password"
-                      onBlur={this.handleChange}
+                      value={this.state.password}
+                      onChange={this.handleChange}
                       placeholder="******"
                     />
                   </div>

@@ -3,9 +3,9 @@ import typeGenerator from './typeGenerator';
 
 export const incidentType = typeGenerator('INCIDENT_DETAILS');
 
-const loading = (type, status) => ({ type, status });
-const detailsSuccess = (type, data) => ({ type, data });
-const detailsFailure = (type, message) => ({ type, message });
+export const loading = (type, status) => ({ type, status });
+export const detailsSuccess = (type, data) => ({ type, data });
+export const detailsFailure = (type, message) => ({ type, message });
 
 export const getIncidentDetails = payload => async (dispatch) => {
   const route = `incident/${payload}`;

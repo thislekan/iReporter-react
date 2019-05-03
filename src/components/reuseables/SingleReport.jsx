@@ -59,12 +59,14 @@ function SingleReport(props) {
         <div className={style['bottom-div']}>
           <div className={style['btn-div']}>
             <button
+              id='view_btn'
               className={style['view-btn']}
               onClick={() => fetchIncident(id, incidentLocation)}
             >
               Details
             </button>
             <button
+              id='edit_btn'
               className={style['edit-btn']}
               onClick={() => alterEditModal(id)}
             >
@@ -72,6 +74,7 @@ function SingleReport(props) {
             </button>
             {
               (location.pathname === '/admin') ? '' : <button
+                id='delete_btn'
                 className={style['delete-btn']}
                 onClick={() => {
                   alterDeleteModal();

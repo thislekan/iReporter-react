@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CreateReport /> should render the index 1`] = `
+<div
+  id="create-form-div"
+>
+  <div>
+    <h2>
+      Report an incident
+    </h2>
+    <form
+      onSubmit={[MockFunction]}
+    >
+      <div>
+        <div>
+          <label
+            htmlFor="type"
+          >
+            Select type of report
+          </label>
+          <select
+            id="report-type"
+            name="type"
+            onBlur={[MockFunction]}
+          >
+            <option
+              value=""
+            >
+              Please select your report type
+            </option>
+            <option
+              value="red-flag"
+            >
+              Red Flag
+            </option>
+            <option
+              value="intervention"
+            >
+              Intervention
+            </option>
+          </select>
+        </div>
+        <div>
+          <label
+            htmlFor="title"
+          >
+            Title
+          </label>
+          <input
+            id="create-incident-title"
+            name="title"
+            onBlur={[MockFunction]}
+            type="text"
+          />
+        </div>
+        <div
+          className=""
+        >
+          <label
+            htmlFor="comments"
+          >
+            Enter comments
+          </label>
+          <textarea
+            id="comments"
+            name="comments"
+            onBlur={[MockFunction]}
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="location"
+          >
+            Enter Location or Coordinates
+          </label>
+          <input
+            id="location"
+            name="location"
+            onBlur={[MockFunction]}
+            type="text"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="image or video"
+          >
+            Upload Image or Video
+          </label>
+          <input
+            accept="image/*, video/*"
+            disabled={true}
+            id="file-upload"
+            multiple={true}
+            name="image or video"
+            onChange={[MockFunction]}
+            onClick={[MockFunction]}
+            type="file"
+          />
+        </div>
+        <div>
+          <div>
+            <img
+              alt="preview"
+              key="0"
+              src="jd"
+            />
+            <img
+              alt="preview"
+              key="1"
+              src="djh"
+            />
+          </div>
+        </div>
+        <div>
+          <button
+            id="create-incident"
+            type="submit"
+          >
+            Create
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

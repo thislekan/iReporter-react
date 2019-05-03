@@ -1,19 +1,19 @@
-import axios from 'axios';
-import API_URL from '../../constant';
+import request from '../../utils/request';
 import typeGenerator from './typeGenerator';
 
 export const authType = typeGenerator('AUTH_USER');
 
-const loading = (type, status) => ({ type, status });
-const authSuccess = (type, user, token, route) => ({
+export const loading = (type, status) => ({ type, status });
+export const authSuccess = (type, user, token, route) => ({
   type, user, token, route,
 });
-const authFailure = (type, message) => ({ type, message });
+export const authFailure = (type, message) => ({ type, message });
 
-const authenticateUser = ({ payload, route }) => async (dispatch) => {
+export const authenticateUser = ({ payload, route }) => async (dispatch) => {
+  const verb = 'post';
   try {
     dispatch(loading(authType.loading, true));
-    const result = await axios.post(`${API_URL}${route}`, { ...payload });
+    const result = await request({ route, verb, payload });
     const { token, user } = await result.data.data;
     return dispatch(authSuccess(authType.success, user, token, route));
   } catch (error) {
@@ -24,5 +24,3 @@ const authenticateUser = ({ payload, route }) => async (dispatch) => {
     return dispatch(authFailure(authType.failure, errorResponse));
   }
 };
-
-export default authenticateUser;

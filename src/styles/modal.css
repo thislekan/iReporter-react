@@ -34,4 +34,8 @@
     height: 25rem;
     top: calc(50% - 12.5rem);
   }
+  .non-msg-modal{
+    height: 35rem;
+    top: calc(50% - 17.5rem);
+  }
 }

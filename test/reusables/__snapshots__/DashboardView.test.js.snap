@@ -1,0 +1,343 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DashboardView /> should render DashboardView 1`] = `
+<div>
+  <div>
+    <div>
+      <Modal
+        ariaHideApp={true}
+        bodyOpenClassName="ReactModal__Body--open"
+        closeTimeoutMS={0}
+        isOpen={false}
+        onAfterClose={[Function]}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        role="dialog"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "left": "20px",
+              "margin": "1rem 0",
+              "right": "20px",
+            },
+          }
+        }
+      >
+        <div
+          aria-hidden={true}
+          onClick={[Function]}
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon="times-circle"
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            style={
+              Object {
+                "height": "2rem",
+                "width": "2rem",
+              }
+            }
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </div>
+        <CreateReport
+          clearBlobs={[Function]}
+          disableFileInput={false}
+          handleChange={[MockFunction]}
+          handleCreateIncident={[Function]}
+          handleMedia={[Function]}
+          imageBlobs={
+            Array [
+              "hi",
+              "helo",
+            ]
+          }
+        />
+      </Modal>
+      <Modal
+        ariaHideApp={true}
+        bodyOpenClassName="ReactModal__Body--open"
+        closeTimeoutMS={0}
+        isOpen={false}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        role="dialog"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "left": "20px",
+              "margin": "1rem 0",
+              "padding": "10px",
+              "right": "20px",
+            },
+          }
+        }
+      >
+        <div
+          aria-hidden={true}
+          onClick={[Function]}
+        >
+          <FontAwesomeIcon
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon="times-circle"
+            inverse={false}
+            listItem={false}
+            mask={null}
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size={null}
+            spin={false}
+            style={
+              Object {
+                "height": "2rem",
+                "width": "2rem",
+              }
+            }
+            symbol={false}
+            title=""
+            transform={null}
+          />
+        </div>
+        <EditReport
+          alterDisableComment={[Function]}
+          alterDisableLocation={[Function]}
+          alterDisableStatus={[Function]}
+          comment=""
+          disableComment={true}
+          disableLocation={true}
+          disableStatus={true}
+          handleChange={[MockFunction]}
+          incident={
+            Object {
+              "comment": "jhdfhfdjk",
+              "createdBy": "hjdjhdf",
+              "createdOn": "48595940698459540",
+              "creator": "jhdfkjdf",
+              "id": "djfjfdkl-jeroier",
+              "images": Array [
+                "hi",
+                "helo",
+              ],
+              "isLoading": false,
+              "location": "sdjnkjs",
+              "message": "kjfdj",
+              "status": "draft",
+              "title": "dhjfd",
+              "type": "red-flag",
+              "updatedOn": "19234895049",
+              "videos": Array [
+                "fdkfdn",
+              ],
+            }
+          }
+          incidentLocation=""
+          incidentStatus=""
+          location={
+            Object {
+              "pathname": "/user",
+            }
+          }
+        />
+      </Modal>
+    </div>
+    <p
+      id="welcome-text"
+    >
+      Welcome. View your reports.
+    </p>
+    <div
+      aria-hidden={true}
+      id="create-modal"
+      onClick={[Function]}
+      role="button"
+    >
+      <img
+        alt=""
+        src={Object {}}
+      />
+    </div>
+    <Modal
+      ariaHideApp={true}
+      bodyOpenClassName="ReactModal__Body--open"
+      closeTimeoutMS={0}
+      isOpen={false}
+      onRequestClose={[MockFunction]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      role="dialog"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+    >
+      <div>
+        <div>
+          <h3>
+            Are you sure you want to delete this report?
+          </h3>
+          <div>
+            <div>
+              <button
+                className=""
+                onClick={[MockFunction]}
+              >
+                Cancel
+              </button>
+            </div>
+            <div>
+              <button
+                className=""
+                onClick={[MockFunction]}
+              >
+                Delete Report
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Modal>
+    <Modal
+      ariaHideApp={true}
+      bodyOpenClassName="ReactModal__Body--open"
+      closeTimeoutMS={0}
+      isOpen={false}
+      onRequestClose={[MockFunction]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      role="dialog"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "left": "20px",
+            "margin": "1rem 0",
+            "padding": "10px",
+            "right": "20px",
+          },
+        }
+      }
+    >
+      <div
+        aria-hidden={true}
+        onClick={[MockFunction]}
+      >
+        <FontAwesomeIcon
+          border={false}
+          className=""
+          fixedWidth={false}
+          flip={null}
+          icon="times-circle"
+          inverse={false}
+          listItem={false}
+          mask={null}
+          pull={null}
+          pulse={false}
+          rotation={null}
+          size={null}
+          spin={false}
+          style={
+            Object {
+              "height": "2rem",
+              "width": "2rem",
+            }
+          }
+          symbol={false}
+          title=""
+          transform={null}
+        />
+      </div>
+      <ReportDetails
+        incident={
+          Object {
+            "comment": "jhdfhfdjk",
+            "createdBy": "hjdjhdf",
+            "createdOn": "48595940698459540",
+            "creator": "jhdfkjdf",
+            "id": "djfjfdkl-jeroier",
+            "images": Array [
+              "hi",
+              "helo",
+            ],
+            "isLoading": false,
+            "location": "sdjnkjs",
+            "message": "kjfdj",
+            "status": "draft",
+            "title": "dhjfd",
+            "type": "red-flag",
+            "updatedOn": "19234895049",
+            "videos": Array [
+              "fdkfdn",
+            ],
+          }
+        }
+        mapUrl=""
+      />
+    </Modal>
+    <div>
+      <div>
+        <FilterFeature />
+        <SearchFeature />
+      </div>
+      <div
+        className="recently-created"
+      >
+        <div
+          id="all-reports"
+        >
+          <div
+            id="incidents-view"
+          >
+            <SingleReport
+              alterDeleteModal={[MockFunction]}
+              alterEditModal={[Function]}
+              createdOn="48595940698459540"
+              fetchIncident={[MockFunction]}
+              id="djfjfdkl-jeroier"
+              incidentLocation="sdjnkjs"
+              key="djfjfdkl-jeroier"
+              location={
+                Object {
+                  "pathname": "/user",
+                }
+              }
+              status="draft"
+              title="dhjfd"
+              type="red-flag"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

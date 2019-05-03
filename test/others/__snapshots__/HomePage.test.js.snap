@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> should render the homepage 1`] = `
+<div>
+  <section>
+    <div>
+      <div>
+        <h1>
+          You too can help
+          <span>
+              
+          </span>
+          <span>
+            end
+          </span>
+           corruption.
+        </h1>
+        <button
+          id="go-to-signup"
+          onClick={[Function]}
+        >
+          Sign Up
+        </button>
+      </div>
+      <div>
+        <div>
+          <img
+            alt="transparent phone"
+            src={Object {}}
+          />
+          <img
+            alt="report incident screenshot"
+            src={Object {}}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div>
+      <div>
+        <h3>
+          Lend the government your voice
+        </h3>
+      </div>
+      <div>
+        <div>
+          <img
+            alt="protester with megaphone"
+            src={Object {}}
+          />
+        </div>
+        <div
+          className=""
+        >
+          <p>
+            With an internet connection, you too can help fight corruption. All you need to do is register with us and report incidents with their location, leaving the rest to us
+          </p>
+          <p>
+            We make sure you remain anonymous while we investigate and you get real time notifications on your reorted incidents
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    className={[Function]}
+  >
+    <div>
+      <div
+        className=""
+      >
+        <h3>
+          How it works.
+        </h3>
+      </div>
+      <div>
+        <div>
+          <img
+            alt=""
+            src={Object {}}
+          />
+        </div>
+        <div
+          className=""
+        >
+          <p>
+            You too can fight corruption in 3 easy steps
+          </p>
+          <div>
+            <p>
+              <span>
+                1.
+              </span>
+               Sign up and verify your email.
+            </p>
+            <p>
+              <span>
+                2.
+              </span>
+               Login after verification.
+            </p>
+            <p>
+              <span>
+                3.
+              </span>
+               Report an incident.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div>
+      <div>
+        <h3>
+          Our numbers have been good
+        </h3>
+      </div>
+      <div>
+        <div>
+          <div>
+            <span>
+              All inicdents
+            </span>
+            <span
+              className=""
+            >
+              1000
+            </span>
+          </div>
+          <div>
+            <span>
+              Resolved incidents
+            </span>
+            <span
+              className=""
+            >
+              550
+            </span>
+          </div>
+          <div>
+            <span>
+              Rejected incidents
+            </span>
+            <span
+              className=""
+            >
+              200
+            </span>
+          </div>
+          <div>
+            <span>
+              Under Investigation
+            </span>
+            <span
+              className=""
+            >
+              250
+            </span>
+          </div>
+        </div>
+        <div>
+          <p>
+            We pride ourselves in the numbers of resolved incidents, but we aim for even better results. Our team of investigators are thorough and discreet in their approach.
+          </p>
+          <p>
+            Every incident is treated as a priority. Our system and approach are void of bias, meaning we hold ourselves to a great standard. The numbers tell our stories for us.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div>
+      <p>
+        disclaimer
+      </p>
+      <p>
+        iReporter is a non governmental organization committed to ending corruption in nigeria
+      </p>
+    </div>
+    <div>
+      <p>
+        contact us 
+        <a
+          href="mailto:email@ireporter.net"
+        >
+          email@ireporter.net
+        </a>
+      </p>
+    </div>
+  </footer>
+</div>
+`;

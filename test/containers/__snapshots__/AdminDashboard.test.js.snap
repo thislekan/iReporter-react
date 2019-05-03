@@ -1,0 +1,498 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserForm /> Should render all elements 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(AdminDashboard)
+        editStatus={[MockFunction]}
+        editStatusAction={[MockFunction]}
+        getIncidents={[MockFunction]}
+        getIncidentsDetails={[MockFunction]}
+        incidentDetail={
+          Object {
+            "comment": "jhdfhfdjk",
+            "createdBy": "hjdjhdf",
+            "createdOn": "48595940698459540",
+            "creator": "jhdfkjdf",
+            "id": "djfjfdkl-jeroier",
+            "images": Array [
+              "hi",
+              "helo",
+            ],
+            "isLoading": false,
+            "location": "sdjnkjs",
+            "message": "kjfdj",
+            "status": "draft",
+            "title": "dhjfd",
+            "type": "red-flag",
+            "updatedOn": "19234895049",
+            "videos": Array [
+              "fdkfdn",
+            ],
+          }
+        }
+        incidents={
+          Array [
+            Object {
+              "comment": "jhdfhfdjk",
+              "createdBy": "hjdjhdf",
+              "createdOn": "48595940698459540",
+              "creator": "jhdfkjdf",
+              "id": "djfjfdkl-jeroier",
+              "images": Array [
+                "hi",
+                "helo",
+              ],
+              "isLoading": false,
+              "location": "sdjnkjs",
+              "message": "kjfdj",
+              "status": "draft",
+              "title": "dhjfd",
+              "type": "red-flag",
+              "updatedOn": "19234895049",
+              "videos": Array [
+                "fdkfdn",
+              ],
+            },
+          ]
+        }
+        isAdmin={true}
+        isLoading={false}
+        location={
+          Object {
+            "pathname": "/admin",
+          }
+        }
+        message=""
+      >
+        <AdminDashboard
+          editStatus={[MockFunction]}
+          editStatusAction={[Function]}
+          getIncidentDetails={[Function]}
+          getIncidents={[Function]}
+          getIncidentsDetails={[MockFunction]}
+          incidentDetail={
+            Object {
+              "comment": "",
+              "createdBy": "",
+              "createdOn": "",
+              "creator": "",
+              "id": "",
+              "images": "",
+              "isLoading": false,
+              "location": "",
+              "message": "",
+              "status": "",
+              "title": "",
+              "type": "",
+              "updatedOn": "",
+              "videos": "",
+            }
+          }
+          incidents={Array []}
+          isAdmin={false}
+          isLoading={false}
+          location={
+            Object {
+              "pathname": "/admin",
+            }
+          }
+          message=""
+          token=""
+        >
+          <div>
+            <DashboardView
+              alterDeleteModal={[Function]}
+              alterDisableComment={[Function]}
+              alterDisableLocation={[Function]}
+              alterDisableStatus={[Function]}
+              alterEditModal={[Function]}
+              clearBlobs={[Function]}
+              closeCreateModal={[Function]}
+              closeDetailsModal={[Function]}
+              comment=""
+              deleteIncident={[Function]}
+              disableComment={true}
+              disableFileInput={false}
+              disableLocation={true}
+              disableStatus={true}
+              fetchIncident={[Function]}
+              handleChange={[Function]}
+              handleCreateIncident={[Function]}
+              handleMedia={[Function]}
+              hideCreateButton={[Function]}
+              incident={
+                Object {
+                  "comment": "",
+                  "createdBy": "",
+                  "createdOn": "",
+                  "creator": "",
+                  "id": "",
+                  "images": "",
+                  "isLoading": false,
+                  "location": "",
+                  "message": "",
+                  "status": "",
+                  "title": "",
+                  "type": "",
+                  "updatedOn": "",
+                  "videos": "",
+                }
+              }
+              incidentLocation=""
+              incidentStatus=""
+              incidents={Array []}
+              isCreateModalOpen={false}
+              isDeleteModalOpen={false}
+              isDetailsModalOpen={false}
+              isEditModalOpen={false}
+              isLoading={false}
+              location={
+                Object {
+                  "pathname": "/admin",
+                }
+              }
+              mapUrl=""
+              openCreateModal={[Function]}
+              showCreateButton={false}
+            >
+              <div>
+                <div>
+                  <div>
+                    <Modal
+                      ariaHideApp={true}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      closeTimeoutMS={0}
+                      isOpen={false}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      role="dialog"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={true}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "left": "20px",
+                            "margin": "1rem 0",
+                            "padding": "10px",
+                            "right": "20px",
+                          },
+                        }
+                      }
+                    >
+                      <Portal
+                        containerInfo={
+                          <div
+                            class="ReactModalPortal"
+                          />
+                        }
+                      >
+                        <ModalPortal
+                          ariaHideApp={true}
+                          bodyOpenClassName="ReactModal__Body--open"
+                          closeTimeoutMS={0}
+                          defaultStyles={
+                            Object {
+                              "content": Object {
+                                "WebkitOverflowScrolling": "touch",
+                                "background": "#fff",
+                                "border": "1px solid #ccc",
+                                "borderRadius": "4px",
+                                "bottom": "40px",
+                                "left": "40px",
+                                "outline": "none",
+                                "overflow": "auto",
+                                "padding": "20px",
+                                "position": "absolute",
+                                "right": "40px",
+                                "top": "40px",
+                              },
+                              "overlay": Object {
+                                "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "fixed",
+                                "right": 0,
+                                "top": 0,
+                              },
+                            }
+                          }
+                          isOpen={false}
+                          onRequestClose={[Function]}
+                          parentSelector={[Function]}
+                          portalClassName="ReactModalPortal"
+                          role="dialog"
+                          shouldCloseOnEsc={true}
+                          shouldCloseOnOverlayClick={true}
+                          shouldFocusAfterRender={true}
+                          shouldReturnFocusAfterClose={true}
+                          style={
+                            Object {
+                              "content": Object {
+                                "left": "20px",
+                                "margin": "1rem 0",
+                                "padding": "10px",
+                                "right": "20px",
+                              },
+                            }
+                          }
+                        />
+                      </Portal>
+                    </Modal>
+                  </div>
+                  <p
+                    id="welcome-text"
+                  >
+                    Welcome. View your reports.
+                  </p>
+                  <div
+                    aria-hidden={true}
+                    id="create-modal"
+                    onClick={[Function]}
+                    role="button"
+                  >
+                    <img
+                      alt=""
+                      src={Object {}}
+                    />
+                  </div>
+                  <Modal
+                    ariaHideApp={true}
+                    bodyOpenClassName="ReactModal__Body--open"
+                    closeTimeoutMS={0}
+                    isOpen={false}
+                    onRequestClose={[Function]}
+                    parentSelector={[Function]}
+                    portalClassName="ReactModalPortal"
+                    role="dialog"
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                    shouldFocusAfterRender={true}
+                    shouldReturnFocusAfterClose={true}
+                    style={
+                      Object {
+                        "content": Object {
+                          "left": "20px",
+                          "margin": "1rem 0",
+                          "padding": "10px",
+                          "right": "20px",
+                        },
+                      }
+                    }
+                  >
+                    <Portal
+                      containerInfo={
+                        <div
+                          class="ReactModalPortal"
+                        />
+                      }
+                    >
+                      <ModalPortal
+                        ariaHideApp={true}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        closeTimeoutMS={0}
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        role="dialog"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={true}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "left": "20px",
+                              "margin": "1rem 0",
+                              "padding": "10px",
+                              "right": "20px",
+                            },
+                          }
+                        }
+                      />
+                    </Portal>
+                  </Modal>
+                  <div>
+                    <div>
+                      <FilterFeature>
+                        <div>
+                          <label
+                            htmlFor="select report"
+                          >
+                            Sort reported incidents by status
+                          </label>
+                          <select
+                            id="sort-report"
+                            name="select report"
+                          >
+                            <option
+                              value="all"
+                            >
+                              All
+                            </option>
+                            <option
+                              value="red-flag"
+                            >
+                              Red flags
+                            </option>
+                            <option
+                              value="intervention"
+                            >
+                              Intervention
+                            </option>
+                            <option
+                              value="draft"
+                            >
+                              Draft
+                            </option>
+                            <option
+                              value="rejected"
+                            >
+                              Rejected
+                            </option>
+                            <option
+                              value="resolved"
+                            >
+                              Resolved
+                            </option>
+                            <option
+                              value="under-investigation"
+                            >
+                              Under Investigation
+                            </option>
+                          </select>
+                        </div>
+                      </FilterFeature>
+                      <SearchFeature>
+                        <div>
+                          <label
+                            htmlFor="filter list"
+                          >
+                            Search Incident
+                          </label>
+                          <select
+                            id="filter-options"
+                            name="filter list"
+                          >
+                            <option
+                              value=""
+                            >
+                              Select option
+                            </option>
+                            <option
+                              value="id"
+                            >
+                              Incident ID
+                            </option>
+                            <option
+                              value="location"
+                            >
+                              Location
+                            </option>
+                          </select>
+                          <input
+                            id="filter-value"
+                            name=""
+                            placeholder="Please enter your search term here"
+                            type="text"
+                          />
+                          <div>
+                            <button>
+                              Search
+                            </button>
+                            <button>
+                              Clear Search
+                            </button>
+                          </div>
+                        </div>
+                      </SearchFeature>
+                    </div>
+                    <div
+                      className="recently-created"
+                    >
+                      <div
+                        id="all-reports"
+                      >
+                        <div
+                          id="incidents-view"
+                        >
+                          <p>
+                            No incident reported yet
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </DashboardView>
+          </div>
+        </AdminDashboard>
+      </Connect(AdminDashboard)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;

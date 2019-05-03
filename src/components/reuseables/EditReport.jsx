@@ -15,6 +15,10 @@ function EditReport(props) {
     handleChange,
     comment,
     incidentLocation,
+    location,
+    disableStatus,
+    alterDisableStatus,
+    incidentStatus,
   } = props;
   return (
     <div className={style.editReport}>
@@ -43,6 +47,28 @@ function EditReport(props) {
               </div>
               <p id="incident-date">{moment(Number(incident.createdOn)).format('MMMM Do YYYY')}</p>
             </div>
+            {
+              (location.pathname !== '/admin') ? null : <div className={style['report-details']}>
+                <div className={style['incident-intro']}>
+                  <FontAwesomeIcon icon='check-circle' />
+                  <h4>Status: </h4>
+                </div>
+                <select
+                  name="status"
+                  id="incident-status"
+                  onChange={handleChange}
+                  onBlur={handleChange}
+                  disabled={disableStatus}
+                  value={incidentStatus}
+                >
+                  <option value="">Select status</option>
+                  <option value="draft">Draft</option>
+                  <option value="under-investigation">Under Investigation</option>
+                  <option value="rejected">Rejected</option>
+                  <option value="resolced">Resolved</option>
+                </select>
+              </div>
+            }
             <div className={style['location-div']}>
               <div className={style['comment-div']}>
                 <h4>Location: </h4>
@@ -67,20 +93,33 @@ function EditReport(props) {
               />
             </div>
             <div className={style['edit-btn-div']}>
-              <button
-                className={cx(style['edit-btn'], style['edit-comment'])}
-                id="edit-comment-btn"
-                onClick={alterDisableComment}
-              >
-                Edit Comment
+              {
+                (location.pathname === '/admin') ? null : <button
+                  className={cx(style['edit-btn'], style['edit-comment'])}
+                  id="edit-comment-btn"
+                  onClick={alterDisableComment}
+                >
+                  Edit Comment
               </button>
-              <button
-                className={cx(style['edit-btn'], style['edit-location'])}
-                id="edit-location-btn"
-                onClick={alterDisableLocation}
-              >
-                Edit Location
+              }
+              {
+                (location.pathname === '/admin') ? null : <button
+                  className={cx(style['edit-btn'], style['edit-location'])}
+                  id="edit-location-btn"
+                  onClick={alterDisableLocation}
+                >
+                  Edit Location
+                </button>
+              }
+              {
+                (location.pathname !== '/admin') ? null : <button
+                  className={cx(style['edit-btn'], style['edit-comment'])}
+                  id="edit-location-btn"
+                  onClick={alterDisableStatus}
+                >
+                  Edit Status
               </button>
+              }
             </div>
           </div>
         </div>
@@ -98,6 +137,10 @@ EditReport.propTypes = {
   handleChange: PropTypes.func.isRequired,
   comment: PropTypes.string.isRequired,
   incidentLocation: PropTypes.string.isRequired,
+  location: PropTypes.object.isRequired,
+  disableStatus: PropTypes.bool.isRequired,
+  alterDisableStatus: PropTypes.func.isRequired,
+  incidentStatus: PropTypes.string.isRequired,
 };
 
 export default EditReport;

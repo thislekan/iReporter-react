@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader /> should render the PageLoader 1`] = `
+<div>
+  <onlyUpdateForKeys(Loader)
+    color="#117d5a"
+    css={
+      Object {
+        "map": undefined,
+        "name": "1lkjh1n",
+        "next": undefined,
+        "styles": "
+    display: block;
+    margin: 0 auto;
+    border-color: red;
+",
+      }
+    }
+    loading={false}
+    size={200}
+    sizeUnit="px"
+  />
+</div>
+`;

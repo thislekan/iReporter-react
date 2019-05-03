@@ -7,6 +7,7 @@ import incidentDetails from './incidentDetailReducer';
 import deleteIncidentReducer from './deleteIncidentReducer';
 import editCommentReducer from './editCommentReducer';
 import editLocationReducer from './editLocationReducer';
+import editSatusReducer from './editStatusReducer';
 
 const incidentReducer = reduceReducers(
   createIncidentReducer,
@@ -14,6 +15,7 @@ const incidentReducer = reduceReducers(
   deleteIncidentReducer,
   editCommentReducer,
   editLocationReducer,
+  editSatusReducer,
 );
 
 /**

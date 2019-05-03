@@ -13,6 +13,7 @@ function AlertMessage(props) {
             <button
               onClick={resetState}
               className={style.modal_btn}
+              id='alert-msg-btn'
             >
               OK
             </button>
@@ -25,13 +26,12 @@ function AlertMessage(props) {
 
 AlertMessage.propTypes = {
   message: PropTypes.string,
-  resetState: PropTypes.func,
+  resetState: PropTypes.func.isRequired,
   openModal: PropTypes.bool,
 };
 
 AlertMessage.defaultProps = {
   message: '',
-  resetState: f => f,
   openModal: false,
 };
 

@@ -1,0 +1,311 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should render a different content in the header component 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <withRouter(Header)
+        location={
+          Object {
+            "pathname": "/signup",
+          }
+        }
+      >
+        <Route>
+          <Header
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            match={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+          >
+            <div>
+              <header>
+                <nav>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "display": "flex",
+                          "justifyContent": "center",
+                          "marginLeft": "10px",
+                        }
+                      }
+                    >
+                      <NavLink
+                        className=""
+                        exact={true}
+                        to="/"
+                      >
+                        <Route
+                          exact={true}
+                          path="\\\\/"
+                        >
+                          <Link
+                            aria-current="page"
+                            className="active"
+                            style={Object {}}
+                            to="/"
+                          >
+                            <a
+                              aria-current="page"
+                              className="active"
+                              href="/"
+                              onClick={[Function]}
+                              style={Object {}}
+                            >
+                              iReporter
+                            </a>
+                          </Link>
+                        </Route>
+                      </NavLink>
+                    </div>
+                    <div>
+                      <NavLink
+                        to="/login"
+                      >
+                        <Route
+                          path="\\\\/login"
+                        >
+                          <Link
+                            aria-current={null}
+                            to="/login"
+                          >
+                            <a
+                              aria-current={null}
+                              href="/login"
+                              onClick={[Function]}
+                            >
+                              Login
+                            </a>
+                          </Link>
+                        </Route>
+                      </NavLink>
+                    </div>
+                  </div>
+                </nav>
+              </header>
+            </div>
+          </Header>
+        </Route>
+      </withRouter(Header)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`<Header /> should render the header component 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <withRouter(Header)>
+        <Route>
+          <Header
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "createHref": [Function],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            match={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+          >
+            <div>
+              <header>
+                <nav>
+                  <div>
+                    <div
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "display": "flex",
+                          "justifyContent": "center",
+                          "marginLeft": "10px",
+                        }
+                      }
+                    >
+                      <NavLink
+                        className=""
+                        exact={true}
+                        to="/"
+                      >
+                        <Route
+                          exact={true}
+                          path="\\\\/"
+                        >
+                          <Link
+                            aria-current="page"
+                            className="active"
+                            style={Object {}}
+                            to="/"
+                          >
+                            <a
+                              aria-current="page"
+                              className="active"
+                              href="/"
+                              onClick={[Function]}
+                              style={Object {}}
+                            >
+                              iReporter
+                            </a>
+                          </Link>
+                        </Route>
+                      </NavLink>
+                    </div>
+                    <div>
+                      <NavLink
+                        to="/login"
+                      >
+                        <Route
+                          path="\\\\/login"
+                        >
+                          <Link
+                            aria-current={null}
+                            to="/login"
+                          >
+                            <a
+                              aria-current={null}
+                              href="/login"
+                              onClick={[Function]}
+                            >
+                              Login
+                            </a>
+                          </Link>
+                        </Route>
+                      </NavLink>
+                    </div>
+                  </div>
+                </nav>
+              </header>
+            </div>
+          </Header>
+        </Route>
+      </withRouter(Header)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;

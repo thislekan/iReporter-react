@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchComponent /> Should render the component 1`] = `
+<div>
+  <label
+    htmlFor="filter list"
+  >
+    Search Incident
+  </label>
+  <select
+    id="filter-options"
+    name="filter list"
+  >
+    <option
+      value=""
+    >
+      Select option
+    </option>
+    <option
+      value="id"
+    >
+      Incident ID
+    </option>
+    <option
+      value="location"
+    >
+      Location
+    </option>
+  </select>
+  <input
+    id="filter-value"
+    name=""
+    placeholder="Please enter your search term here"
+    type="text"
+  />
+  <div>
+    <button>
+      Search
+    </button>
+    <button>
+      Clear Search
+    </button>
+  </div>
+</div>
+`;
