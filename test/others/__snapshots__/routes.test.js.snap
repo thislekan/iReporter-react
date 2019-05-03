@@ -288,7 +288,7 @@ exports[`<Header /> should render the route component 1`] = `
                                 With an internet connection, you too can help fight corruption. All you need to do is register with us and report incidents with their location, leaving the rest to us
                               </p>
                               <p>
-                                We make sure you remain anonymous while we investigate and you get real time notifications on your reorted incidents
+                                We make sure you remain anonymous while we investigate and you get real time notifications on your reorted incidents.
                               </p>
                             </div>
                           </div>
