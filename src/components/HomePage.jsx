@@ -48,7 +48,7 @@ function HomePage(props) {
               leaving the rest to us</p>
               <p>We make sure you remain anonymous
                 while we investigate and you get real
-              time notifications on your reorted incidents</p>
+              time notifications on your reorted incidents.</p>
             </div>
           </div>
         </div>
