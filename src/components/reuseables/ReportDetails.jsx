@@ -97,11 +97,7 @@ function ReportDetails(props) {
 
 ReportDetails.propTypes = {
   incident: PropTypes.object.isRequired,
-  mapUrl: PropTypes.string,
-};
-
-ReportDetails.defaultProps = {
-  mapUrl: '',
+  mapUrl: PropTypes.string.isRequired,
 };
 
 export default ReportDetails;

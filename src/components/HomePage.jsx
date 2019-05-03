@@ -19,9 +19,8 @@ function HomePage(props) {
               <span className={style.endText}>end</span> corruption.
           </h1>
             <button
-              onClick={
-                () => history.push('/signup')
-              }
+              onClick={() => history.push('/signup')}
+              id="go-to-signup"
             >
               Sign Up
             </button>

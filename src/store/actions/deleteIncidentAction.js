@@ -3,9 +3,9 @@ import typeGenerator from './typeGenerator';
 
 export const incidentType = typeGenerator('DELETE_INCIDENT');
 
-const loading = (type, status) => ({ type, status });
-const deleteSuccess = (type, data) => ({ type, data });
-const deleteFailure = (type, message) => ({ type, message });
+export const loading = (type, status) => ({ type, status });
+export const deleteSuccess = (type, data) => ({ type, data });
+export const deleteFailure = (type, message) => ({ type, message });
 
 export const deleteIncident = payload => async (dispatch) => {
   const route = 'incident/delete';

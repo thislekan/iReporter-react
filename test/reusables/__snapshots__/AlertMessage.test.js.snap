@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AlertMessage /> Should render the component 1`] = `
+<div>
+  <div>
+    <div>
+      <p>
+        Hello World
+      </p>
+      <button
+        id="alert-msg-btn"
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "resetstate": [Function],
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+`;

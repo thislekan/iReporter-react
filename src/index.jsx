@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import AppRouter from './routes/index.jsx';
+import Loader from './components/reuseables/Loader.jsx';
 import reduxStore from './store';
 import './styles/index.css';
 
@@ -13,7 +14,7 @@ library.add(faCheckCircle, faTimesCircle);
 const { store, persistor } = reduxStore;
 const MainApp = () => (
   <Provider store={store}>
-    <PersistGate persistor={persistor}>
+    <PersistGate persistor={persistor} loading={<Loader isLoading />} >
       <AppRouter />
     </PersistGate>
   </Provider>

@@ -1,6 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/interactive-supports-focus */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
@@ -12,6 +9,7 @@ import ReportDetails from './ReportDetails.jsx';
 import FilterComponent from '../search-and-filter/FilterComponent.jsx';
 import SearchComponent from '../search-and-filter/SearchComponent.jsx';
 import style from '../../styles/UserDashboard.css';
+// import modalStyles from '../../styles/modal.css';
 import promoImage from '../../media/promotion.svg';
 import Loader from './Loader.jsx';
 import EditReport from './EditReport.jsx';
@@ -23,7 +21,7 @@ const customizedStyle = {
   },
 };
 
-Modal.setAppElement('#app');
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#app');
 
 function DashboardView(props) {
   const {
@@ -58,38 +56,44 @@ function DashboardView(props) {
     disableLocation,
     comment,
     incidentLocation,
+    disableStatus,
+    alterDisableStatus,
+    incidentStatus,
   } = props;
   return (
     <div className={style.user__dashboard}>
       <div className={style['padded-body']}>
         {isLoading && <Loader isLoading={isLoading} />}
         <div>
-          <Modal
-            style={modalDefaultStyle}
-            isOpen={isCreateModalOpen}
-            onRequestClose={closeCreateModal}
-            onAfterOpen={hideCreateButton}
-            onAfterClose={hideCreateButton}
-          >
-            <div
-              className={style.close__modal}
-              onClick={closeCreateModal}
+          {
+            (location.pathname === '/admin') ? null : <Modal
+              style={modalDefaultStyle}
+              isOpen={isCreateModalOpen}
+              onRequestClose={closeCreateModal}
+              onAfterOpen={hideCreateButton}
+              onAfterClose={hideCreateButton}
             >
-              <FontAwesomeIcon
-                icon='times-circle'
-                style={{ height: '2rem', width: '2rem' }}
+              <div
+                className={style.close__modal}
+                onClick={closeCreateModal}
+                aria-hidden
+              >
+                <FontAwesomeIcon
+                  icon='times-circle'
+                  style={{ height: '2rem', width: '2rem' }}
+                />
+              </div>
+              <CreateReport
+                handleCreateIncident={handleCreateIncident}
+                handleChange={handleChange}
+                handleMedia={handleMedia}
+                disableFileInput={disableFileInput}
+                // videoBlob={videoBlob}
+                imageBlobs={imageBlobs}
+                clearBlobs={clearBlobs}
               />
-            </div>
-            <CreateReport
-              handleCreateIncident={handleCreateIncident}
-              handleChange={handleChange}
-              handleMedia={handleMedia}
-              disableFileInput={disableFileInput}
-              // videoBlob={videoBlob}
-              imageBlobs={imageBlobs}
-              clearBlobs={clearBlobs}
-            />
-          </Modal>
+            </Modal>
+          }
           <Modal
             isOpen={isEditModalOpen}
             onRequestClose={alterEditModal}
@@ -98,6 +102,7 @@ function DashboardView(props) {
             <div
               className={style.close__modal}
               onClick={alterEditModal}
+              aria-hidden
             >
               <FontAwesomeIcon
                 icon='times-circle'
@@ -113,6 +118,10 @@ function DashboardView(props) {
               handleChange={handleChange}
               comment={comment}
               incidentLocation={incidentLocation}
+              location={location}
+              disableStatus={disableStatus}
+              alterDisableStatus={alterDisableStatus}
+              incidentStatus={incidentStatus}
             />
           </Modal>
         </div>
@@ -123,38 +132,42 @@ function DashboardView(props) {
             id="create-modal"
             onClick={openCreateModal}
             role='button'
+            aria-hidden
           >
             <img src={promoImage} alt="" />
-          </div>}
-        <Modal
-          isOpen={isDeleteModalOpen}
-          onRequestClose={alterDeleteModal}
-          className={style['delete-modal-box']}
-        >
-          <div className={style['delete-prompt']}>
-            <div className={style['prompt-body']}>
-              <h3>Are you sure you want to delete this report?</h3>
-              <div className={style['delete-btn-parent-div']}>
-                <div>
-                  <button
-                    className={cx(style['alert-btns'], style['cancel-btn'])}
-                    onClick={alterDeleteModal}
-                  >
-                    Cancel
+          </div>
+        }
+        {
+          (location.pathname === '/admin') ? null : <Modal
+            isOpen={isDeleteModalOpen}
+            onRequestClose={alterDeleteModal}
+            className={style['delete-modal-box']}
+          >
+            <div className={style['delete-prompt']}>
+              <div className={style['prompt-body']}>
+                <h3>Are you sure you want to delete this report?</h3>
+                <div className={style['delete-btn-parent-div']}>
+                  <div>
+                    <button
+                      className={cx(style['alert-btns'], style['cancel-btn'])}
+                      onClick={alterDeleteModal}
+                    >
+                      Cancel
                   </button>
-                </div>
-                <div>
-                  <button
-                    className={cx(style['delete-btn'], style['alert-btns'])}
-                    onClick={deleteIncident}
-                  >
-                    Delete Report
+                  </div>
+                  <div>
+                    <button
+                      className={cx(style['delete-btn'], style['alert-btns'])}
+                      onClick={deleteIncident}
+                    >
+                      Delete Report
                   </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Modal>
+          </Modal>
+        }
         <Modal
           style={customizedStyle}
           isOpen={isDetailsModalOpen}
@@ -163,6 +176,7 @@ function DashboardView(props) {
           <div
             className={style.close__modal}
             onClick={closeDetailsModal}
+            aria-hidden
           >
             <FontAwesomeIcon
               icon='times-circle'
@@ -214,36 +228,39 @@ function DashboardView(props) {
 
 DashboardView.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  closeCreateModal: PropTypes.func.isRequired,
+  closeCreateModal: PropTypes.func,
   handleChange: PropTypes.func.isRequired,
-  handleCreateIncident: PropTypes.func.isRequired,
-  disableFileInput: PropTypes.bool.isRequired,
-  handleMedia: PropTypes.func.isRequired,
+  handleCreateIncident: PropTypes.func,
+  disableFileInput: PropTypes.bool,
+  handleMedia: PropTypes.func,
   // videoBlob: PropTypes.array,
   imageBlobs: PropTypes.array,
-  clearBlobs: PropTypes.func.isRequired,
-  openCreateModal: PropTypes.func.isRequired,
+  clearBlobs: PropTypes.func,
+  openCreateModal: PropTypes.func,
   isDetailsModalOpen: PropTypes.bool.isRequired,
   closeDetailsModal: PropTypes.func.isRequired,
   incidents: PropTypes.array.isRequired,
   location: PropTypes.object.isRequired,
-  isCreateModalOpen: PropTypes.bool.isRequired,
-  hideCreateButton: PropTypes.func.isRequired,
+  isCreateModalOpen: PropTypes.bool,
+  hideCreateButton: PropTypes.func,
   fetchIncident: PropTypes.func.isRequired,
   incident: PropTypes.object.isRequired,
   mapUrl: PropTypes.string,
-  showCreateButton: PropTypes.bool.isRequired,
-  isDeleteModalOpen: PropTypes.bool.isRequired,
-  alterDeleteModal: PropTypes.func.isRequired,
-  deleteIncident: PropTypes.func.isRequired,
-  alterEditModal: PropTypes.func.isRequired,
-  isEditModalOpen: PropTypes.bool.isRequired,
+  showCreateButton: PropTypes.bool,
+  isDeleteModalOpen: PropTypes.bool,
+  alterDeleteModal: PropTypes.func,
+  deleteIncident: PropTypes.func,
+  alterEditModal: PropTypes.func,
+  isEditModalOpen: PropTypes.bool,
   alterDisableComment: PropTypes.func,
   alterDisableLocation: PropTypes.func,
   disableComment: PropTypes.bool,
   disableLocation: PropTypes.bool,
   comment: PropTypes.string,
   incidentLocation: PropTypes.string,
+  disableStatus: PropTypes.bool,
+  alterDisableStatus: PropTypes.func,
+  incidentStatus: PropTypes.string,
 };
 
 DashboardView.defaultProps = {
@@ -254,6 +271,23 @@ DashboardView.defaultProps = {
   disableLocation: true,
   incidentLocation: '',
   comment: '',
+  closeCreateModal: f => f,
+  handleCreateIncident: f => f,
+  disableFileInput: false,
+  handleMedia: f => f,
+  clearBlobs: f => f,
+  openCreateModal: f => f,
+  isCreateModalOpen: false,
+  hideCreateButton: f => f,
+  showCreateButton: false,
+  isDeleteModalOpen: false,
+  alterDeleteModal: f => f,
+  deleteIncident: f => f,
+  alterEditModal: f => f,
+  isEditModalOpen: false,
+  disableStatus: true,
+  alterDisableStatus: f => f,
+  incidentStatus: '',
 };
 
 export default DashboardView;

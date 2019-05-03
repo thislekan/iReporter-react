@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import PropTypes from 'prop-types';
-import getIncidents from '../../store/actions/incidentsAction';
+import { getIncidents } from '../../store/actions/incidentsAction';
 import { createIncident } from '../../store/actions/createIncidentAction';
 import { getIncidentDetails } from '../../store/actions/incidentDetailAction';
 import { deleteIncident } from '../../store/actions/deleteIncidentAction';
@@ -28,7 +28,7 @@ class UserDashboard extends React.Component {
     video: [],
     isLoading: false,
     incident: {},
-    mapurl: '',
+    mapUrl: '',
     disableComment: true,
     disableLocation: true,
   };
@@ -48,6 +48,7 @@ class UserDashboard extends React.Component {
     deleteIncident: PropTypes.func.isRequired,
     editCommentAction: PropTypes.func,
     editLocationAction: PropTypes.func,
+    isLoggedIn: PropTypes.bool,
   }
 
   static defaultProps = {
@@ -60,6 +61,7 @@ class UserDashboard extends React.Component {
     incidentDetail: {},
     editCommentAction: f => f,
     editLocationAction: f => f,
+    isLoggedIn: false,
   }
 
   static getDerivedStateFromProps(nextProps) {
@@ -68,17 +70,21 @@ class UserDashboard extends React.Component {
       isLoading,
       incidents,
       incidentDetail: incident,
+      isLoggedIn,
     } = nextProps;
+    if (incident.message) return { message: incident.message };
     return {
       message,
       isLoading,
       incidents,
       incident,
+      isLoggedIn,
     };
   }
 
   componentDidMount() {
     const { getIncidents: fetchIncidents, token } = this.props;
+    setTimeout(() => fetchIncidents(token, false), 1000);
     fetchIncidents(token, false);
   }
 
@@ -86,6 +92,8 @@ class UserDashboard extends React.Component {
     if (e.target.nodeName === 'TEXTAREA') return this.setState({ [e.target.name]: e.target.value });
     return this.setState({ [e.target.name]: e.target.value.trim() });
   }
+
+  resetState = () => this.setState({ message: '' });
 
   clearBlobs = () => this.setState({ imageBlobs: [], videoBlob: [] });
 
@@ -242,6 +250,8 @@ class UserDashboard extends React.Component {
       disableLocation,
       comment,
       location: incidentLocation,
+      isLoggedIn,
+      message,
     } = this.state;
     return (
       <DashboardView
@@ -275,6 +285,9 @@ class UserDashboard extends React.Component {
         disableLocation={disableLocation}
         comment={comment}
         incidentLocation={incidentLocation}
+        isLoggedIn={isLoggedIn}
+        message={message}
+        resetState={this.resetState}
       />
     );
   }

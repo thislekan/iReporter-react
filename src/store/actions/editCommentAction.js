@@ -3,9 +3,9 @@ import typeGenerator from './typeGenerator';
 
 export const incidentType = typeGenerator('EDIT_COMMENT');
 
-const loading = (type, status) => ({ type, status });
-const editCommentSuccess = (type, data) => ({ type, data });
-const editCommentFailure = (type, message) => ({ type, message });
+export const loading = (type, status) => ({ type, status });
+export const editCommentSuccess = (type, data) => ({ type, data });
+export const editCommentFailure = (type, message) => ({ type, message });
 
 export const editCommentAction = ({ id, type, comment }) => async (dispatch) => {
   const route = `${type}/comment/${id}`;

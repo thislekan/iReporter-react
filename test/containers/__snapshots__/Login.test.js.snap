@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UserForm /> Should render all elements 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <Connect(Login)
+        history={
+          Object {
+            "push": [MockFunction],
+          }
+        }
+      >
+        <Login
+          authStatus="failure"
+          authenticateUser={[Function]}
+          history={
+            Object {
+              "push": [MockFunction],
+            }
+          }
+          isAdmin={false}
+          isLoading={false}
+          message=""
+        >
+          <div>
+            <div>
+              <div>
+                <div>
+                  <img
+                    alt=""
+                    src={Object {}}
+                  />
+                </div>
+                <div
+                  id="form"
+                >
+                  <div>
+                    <div>
+                      <div>
+                        <Link
+                          to="/signup"
+                        >
+                          <a
+                            href="/signup"
+                            onClick={[Function]}
+                          >
+                            Sign Up
+                          </a>
+                        </Link>
+                      </div>
+                      <div>
+                        <Link
+                          to="/login"
+                        >
+                          <a
+                            href="/login"
+                            onClick={[Function]}
+                          >
+                            Log In
+                          </a>
+                        </Link>
+                      </div>
+                    </div>
+                    <form
+                      onSubmit={[Function]}
+                    >
+                      <div>
+                        <label
+                          htmlFor="email"
+                        >
+                          EMAIL
+                        </label>
+                        <input
+                          id="email"
+                          name="email"
+                          onChange={[Function]}
+                          type="email"
+                          value=""
+                        />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="password"
+                        >
+                          PASSWORD
+                        </label>
+                        <input
+                          id="password"
+                          name="password"
+                          onChange={[Function]}
+                          type="password"
+                          value=""
+                        />
+                      </div>
+                      <div
+                        className="btn-div"
+                      >
+                        <button
+                          id="login-btn"
+                          type="submit"
+                        >
+                          Log In
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Login>
+      </Connect(Login)>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;

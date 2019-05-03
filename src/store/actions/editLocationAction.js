@@ -3,9 +3,9 @@ import typeGenerator from './typeGenerator';
 
 export const incidentType = typeGenerator('EDIT_LOCATION');
 
-const loading = (type, status) => ({ type, status });
-const editLocationSuccess = (type, data) => ({ type, data });
-const editLocationFailure = (type, message) => ({ type, message });
+export const loading = (type, status) => ({ type, status });
+export const editLocationSuccess = (type, data) => ({ type, data });
+export const editLocationFailure = (type, message) => ({ type, message });
 
 export const editLocationAction = ({ id, type, location }) => async (dispatch) => {
   const route = `${type}/location/${id}`;

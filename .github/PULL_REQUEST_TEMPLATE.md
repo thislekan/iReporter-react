@@ -18,7 +18,7 @@ Please note: This information assumes a basic understanding of node & git
 cd iReporter-react (or the name of the folder you zipped the files in)
 
 # Switch to staging branch
-git checkout feature/165343408/read-article-upgrade
+git checkout feature/storyId/task-to-be-done
 
 # Install package modules
 npm install
