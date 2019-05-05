@@ -1,4 +1,4 @@
-.modal{
+.alert{
   background: white;
   color: #14233b;
   position: absolute;
@@ -10,8 +10,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid gainsboro;
+  box-shadow: 1px 2px 2px -2px black;
 }
-.modal_body{
+.alert_body{
   height: 20rem;
   width: 100%;
   display: flex;
@@ -20,7 +22,7 @@
   text-align: center;
   font-size: 1.6rem;
 }
-.modal_btn{
+.alert_btn{
   width: 10rem;
   align-self: center;
   height: 4rem;
@@ -28,13 +30,13 @@
   border: 1px solid #1669ef;
 }
 @media screen and (min-width: 600px) {
-  .modal{
+  .alert{
     width: 30rem;
     left: calc(50% - 15rem);
     height: 25rem;
     top: calc(50% - 12.5rem);
   }
-  .non-msg-modal{
+  .non-msg-alert{
     height: 35rem;
     top: calc(50% - 17.5rem);
   }

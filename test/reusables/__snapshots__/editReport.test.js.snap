@@ -312,7 +312,7 @@ exports[`<SingleReport /> should render a different content when pathname is Adm
               Rejected
             </option>
             <option
-              value="resolced"
+              value="resolved"
             >
               Resolved
             </option>

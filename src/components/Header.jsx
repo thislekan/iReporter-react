@@ -21,7 +21,9 @@ function Header(props) {
               <NavLink to='/' exact={true}
                 className={cx(style.ireporterLogo, style.navigationLinks)}>iReporter</NavLink>
             </div>
-            {(location.pathname === '/admin' || location.pathname === '/user') ? null : <div><NavLink to='/login' className={style.navigationLinks}>Login</NavLink></div>}
+            {(location.pathname === '/admin' || location.pathname === '/user') ? null : <div className={style['login-link']}>
+              <NavLink to='/login' className={style.navigationLinks}>Login</NavLink>
+            </div>}
             {(location.pathname === '/user' || location.pathname === '/admin') ? <div>
               <NavLink
                 onClick={() => localStorage.removeItem('persist:root')}
