@@ -65,7 +65,7 @@ function EditReport(props) {
                   <option value="draft">Draft</option>
                   <option value="under-investigation">Under Investigation</option>
                   <option value="rejected">Rejected</option>
-                  <option value="resolced">Resolved</option>
+                  <option value="resolved">Resolved</option>
                 </select>
               </div>
             }

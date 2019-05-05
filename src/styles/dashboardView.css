@@ -1,0 +1,33 @@
+.notification-modal-box{
+  height: 15rem;
+  position: absolute;
+  top: calc(50% - 7.5rem);
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.notification-modal-box button{
+  background: #117d5a;
+  border: 1px solid #117d5a;
+  height: 3rem;
+  width: 6rem;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px -1px #989797;
+  color: white;
+}
+@media screen and (min-width: 500px) {
+  .notification-modal-box{
+    width: 30rem;
+    left: calc(50% - 15rem);
+  }
+}

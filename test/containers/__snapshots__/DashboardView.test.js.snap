@@ -37,11 +37,11 @@ exports[`<UserForm /> Should render all elements 1`] = `
       }
     >
       <DashboardView
-        alterDeleteModal={[Function]}
+        alterDeleteModal={[MockFunction]}
         alterDisableComment={[Function]}
         alterDisableLocation={[Function]}
         alterDisableStatus={[Function]}
-        alterEditModal={[Function]}
+        alterEditModal={[MockFunction]}
         clearBlobs={[Function]}
         closeCreateModal={[Function]}
         closeDetailsModal={[MockFunction]}
@@ -118,7 +118,10 @@ exports[`<UserForm /> Should render all elements 1`] = `
           }
         }
         mapUrl=""
+        message=""
         openCreateModal={[Function]}
+        openModal={false}
+        resetState={[MockFunction]}
         showCreateButton={false}
       >
         <div>
@@ -139,15 +142,6 @@ exports[`<UserForm /> Should render all elements 1`] = `
                 shouldCloseOnOverlayClick={true}
                 shouldFocusAfterRender={true}
                 shouldReturnFocusAfterClose={true}
-                style={
-                  Object {
-                    "content": Object {
-                      "left": "20px",
-                      "margin": "1rem 0",
-                      "right": "20px",
-                    },
-                  }
-                }
               >
                 <Portal
                   containerInfo={
@@ -199,11 +193,8 @@ exports[`<UserForm /> Should render all elements 1`] = `
                     shouldReturnFocusAfterClose={true}
                     style={
                       Object {
-                        "content": Object {
-                          "left": "20px",
-                          "margin": "1rem 0",
-                          "right": "20px",
-                        },
+                        "content": Object {},
+                        "overlay": Object {},
                       }
                     }
                   />
@@ -214,7 +205,7 @@ exports[`<UserForm /> Should render all elements 1`] = `
                 bodyOpenClassName="ReactModal__Body--open"
                 closeTimeoutMS={0}
                 isOpen={false}
-                onRequestClose={[Function]}
+                onRequestClose={[MockFunction]}
                 parentSelector={[Function]}
                 portalClassName="ReactModalPortal"
                 role="dialog"
@@ -222,16 +213,6 @@ exports[`<UserForm /> Should render all elements 1`] = `
                 shouldCloseOnOverlayClick={true}
                 shouldFocusAfterRender={true}
                 shouldReturnFocusAfterClose={true}
-                style={
-                  Object {
-                    "content": Object {
-                      "left": "20px",
-                      "margin": "1rem 0",
-                      "padding": "10px",
-                      "right": "20px",
-                    },
-                  }
-                }
               >
                 <Portal
                   containerInfo={
@@ -271,7 +252,7 @@ exports[`<UserForm /> Should render all elements 1`] = `
                       }
                     }
                     isOpen={false}
-                    onRequestClose={[Function]}
+                    onRequestClose={[MockFunction]}
                     parentSelector={[Function]}
                     portalClassName="ReactModalPortal"
                     role="dialog"
@@ -281,12 +262,8 @@ exports[`<UserForm /> Should render all elements 1`] = `
                     shouldReturnFocusAfterClose={true}
                     style={
                       Object {
-                        "content": Object {
-                          "left": "20px",
-                          "margin": "1rem 0",
-                          "padding": "10px",
-                          "right": "20px",
-                        },
+                        "content": Object {},
+                        "overlay": Object {},
                       }
                     }
                   />
@@ -314,75 +291,6 @@ exports[`<UserForm /> Should render all elements 1`] = `
               bodyOpenClassName="ReactModal__Body--open"
               closeTimeoutMS={0}
               isOpen={false}
-              onRequestClose={[Function]}
-              parentSelector={[Function]}
-              portalClassName="ReactModalPortal"
-              role="dialog"
-              shouldCloseOnEsc={true}
-              shouldCloseOnOverlayClick={true}
-              shouldFocusAfterRender={true}
-              shouldReturnFocusAfterClose={true}
-            >
-              <Portal
-                containerInfo={
-                  <div
-                    class="ReactModalPortal"
-                  />
-                }
-              >
-                <ModalPortal
-                  ariaHideApp={true}
-                  bodyOpenClassName="ReactModal__Body--open"
-                  closeTimeoutMS={0}
-                  defaultStyles={
-                    Object {
-                      "content": Object {
-                        "WebkitOverflowScrolling": "touch",
-                        "background": "#fff",
-                        "border": "1px solid #ccc",
-                        "borderRadius": "4px",
-                        "bottom": "40px",
-                        "left": "40px",
-                        "outline": "none",
-                        "overflow": "auto",
-                        "padding": "20px",
-                        "position": "absolute",
-                        "right": "40px",
-                        "top": "40px",
-                      },
-                      "overlay": Object {
-                        "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "fixed",
-                        "right": 0,
-                        "top": 0,
-                      },
-                    }
-                  }
-                  isOpen={false}
-                  onRequestClose={[Function]}
-                  parentSelector={[Function]}
-                  portalClassName="ReactModalPortal"
-                  role="dialog"
-                  shouldCloseOnEsc={true}
-                  shouldCloseOnOverlayClick={true}
-                  shouldFocusAfterRender={true}
-                  shouldReturnFocusAfterClose={true}
-                  style={
-                    Object {
-                      "content": Object {},
-                      "overlay": Object {},
-                    }
-                  }
-                />
-              </Portal>
-            </Modal>
-            <Modal
-              ariaHideApp={true}
-              bodyOpenClassName="ReactModal__Body--open"
-              closeTimeoutMS={0}
-              isOpen={false}
               onRequestClose={[MockFunction]}
               parentSelector={[Function]}
               portalClassName="ReactModalPortal"
@@ -391,16 +299,6 @@ exports[`<UserForm /> Should render all elements 1`] = `
               shouldCloseOnOverlayClick={true}
               shouldFocusAfterRender={true}
               shouldReturnFocusAfterClose={true}
-              style={
-                Object {
-                  "content": Object {
-                    "left": "20px",
-                    "margin": "1rem 0",
-                    "padding": "10px",
-                    "right": "20px",
-                  },
-                }
-              }
             >
               <Portal
                 containerInfo={
@@ -450,12 +348,77 @@ exports[`<UserForm /> Should render all elements 1`] = `
                   shouldReturnFocusAfterClose={true}
                   style={
                     Object {
+                      "content": Object {},
+                      "overlay": Object {},
+                    }
+                  }
+                />
+              </Portal>
+            </Modal>
+            <Modal
+              ariaHideApp={true}
+              bodyOpenClassName="ReactModal__Body--open"
+              closeTimeoutMS={0}
+              isOpen={false}
+              onRequestClose={[MockFunction]}
+              parentSelector={[Function]}
+              portalClassName="ReactModalPortal"
+              role="dialog"
+              shouldCloseOnEsc={true}
+              shouldCloseOnOverlayClick={true}
+              shouldFocusAfterRender={true}
+              shouldReturnFocusAfterClose={true}
+            >
+              <Portal
+                containerInfo={
+                  <div
+                    class="ReactModalPortal"
+                  />
+                }
+              >
+                <ModalPortal
+                  ariaHideApp={true}
+                  bodyOpenClassName="ReactModal__Body--open"
+                  closeTimeoutMS={0}
+                  defaultStyles={
+                    Object {
                       "content": Object {
-                        "left": "20px",
-                        "margin": "1rem 0",
-                        "padding": "10px",
-                        "right": "20px",
+                        "WebkitOverflowScrolling": "touch",
+                        "background": "#fff",
+                        "border": "1px solid #ccc",
+                        "borderRadius": "4px",
+                        "bottom": "40px",
+                        "left": "40px",
+                        "outline": "none",
+                        "overflow": "auto",
+                        "padding": "20px",
+                        "position": "absolute",
+                        "right": "40px",
+                        "top": "40px",
                       },
+                      "overlay": Object {
+                        "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                        "bottom": 0,
+                        "left": 0,
+                        "position": "fixed",
+                        "right": 0,
+                        "top": 0,
+                      },
+                    }
+                  }
+                  isOpen={false}
+                  onRequestClose={[MockFunction]}
+                  parentSelector={[Function]}
+                  portalClassName="ReactModalPortal"
+                  role="dialog"
+                  shouldCloseOnEsc={true}
+                  shouldCloseOnOverlayClick={true}
+                  shouldFocusAfterRender={true}
+                  shouldReturnFocusAfterClose={true}
+                  style={
+                    Object {
+                      "content": Object {},
+                      "overlay": Object {},
                     }
                   }
                 />
@@ -566,8 +529,8 @@ exports[`<UserForm /> Should render all elements 1`] = `
                     id="incidents-view"
                   >
                     <SingleReport
-                      alterDeleteModal={[Function]}
-                      alterEditModal={[Function]}
+                      alterDeleteModal={[MockFunction]}
+                      alterEditModal={[MockFunction]}
                       createdOn="48595940698459540"
                       fetchIncident={[MockFunction]}
                       id="djfjfdkl-jeroier"

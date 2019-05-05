@@ -21,6 +21,9 @@ describe('<DashboardView />', () => {
         imageBlobs={mock.images}
         deleteIncident={mockFn}
         alterDeleteModal={mockFn}
+        resetState={mockFn}
+        message=""
+        openModal={false}
       />,
     );
     // console.log(wrapper.debug());

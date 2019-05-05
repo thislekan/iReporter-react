@@ -14,9 +14,8 @@ describe('<UserForm />', () => {
   it('should respond to input change and alter state (email) of component', () => {
     const wrapper = setup(<ConnectedSignup history={history} />);
     const signupWrapper = wrapper.find('Signup');
-    signupWrapper.find('#email').simulate('change', { target: { name: 'email', value: 'wrestle@wwe.com' } });
+    signupWrapper.find('#email').simulate('blur', { target: { name: 'email', value: 'wrestle@wwe.com' } });
     expect(signupWrapper.state('email')).toBe('wrestle@wwe.com');
-    expect(wrapper.find('#email').props().value).toBe('wrestle@wwe.com');
   });
   it('should submit form', () => {
     const wrapper = setup(<ConnectedSignup history={history} />);

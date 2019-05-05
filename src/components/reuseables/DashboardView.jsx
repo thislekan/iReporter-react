@@ -9,17 +9,11 @@ import ReportDetails from './ReportDetails.jsx';
 import FilterComponent from '../search-and-filter/FilterComponent.jsx';
 import SearchComponent from '../search-and-filter/SearchComponent.jsx';
 import style from '../../styles/UserDashboard.css';
-// import modalStyles from '../../styles/modal.css';
+import modalStyle from '../../styles/dashboardView.css';
 import promoImage from '../../media/promotion.svg';
 import Loader from './Loader.jsx';
 import EditReport from './EditReport.jsx';
 
-const modalDefaultStyle = { content: { left: '20px', right: '20px', margin: '1rem 0' } };
-const customizedStyle = {
-  content: {
-    left: '20px', right: '20px', padding: '10px', margin: '1rem 0',
-  },
-};
 
 if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#app');
 
@@ -59,6 +53,9 @@ function DashboardView(props) {
     disableStatus,
     alterDisableStatus,
     incidentStatus,
+    message,
+    resetState,
+    openModal,
   } = props;
   return (
     <div className={style.user__dashboard}>
@@ -67,7 +64,7 @@ function DashboardView(props) {
         <div>
           {
             (location.pathname === '/admin') ? null : <Modal
-              style={modalDefaultStyle}
+              className={style['form-modals']}
               isOpen={isCreateModalOpen}
               onRequestClose={closeCreateModal}
               onAfterOpen={hideCreateButton}
@@ -97,7 +94,7 @@ function DashboardView(props) {
           <Modal
             isOpen={isEditModalOpen}
             onRequestClose={alterEditModal}
-            style={customizedStyle}
+            className={style['form-modals']}
           >
             <div
               className={style.close__modal}
@@ -169,7 +166,7 @@ function DashboardView(props) {
           </Modal>
         }
         <Modal
-          style={customizedStyle}
+          className={style['form-modals']}
           isOpen={isDetailsModalOpen}
           onRequestClose={closeDetailsModal}
         >
@@ -189,6 +186,20 @@ function DashboardView(props) {
           />
         </Modal>
         <div className={style.body__content}>
+          {
+            (message && message !== 'Incidents successfully fetched') && <Modal
+              isOpen={openModal}
+              onRequestClose={resetState}
+              className={modalStyle['notification-modal-box']}
+            >
+              <p>{message}</p>
+              <button
+                onClick={resetState}
+              >
+                OK
+              </button>
+            </Modal>
+          }
           <div className={style.control}>
             <FilterComponent />
             <SearchComponent />
@@ -261,6 +272,9 @@ DashboardView.propTypes = {
   disableStatus: PropTypes.bool,
   alterDisableStatus: PropTypes.func,
   incidentStatus: PropTypes.string,
+  openModal: PropTypes.bool.isRequired,
+  message: PropTypes.string.isRequired,
+  resetState: PropTypes.func.isRequired,
 };
 
 DashboardView.defaultProps = {

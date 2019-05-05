@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as authSelector from '../store/selectors/authSelector';
 import { authenticateUser } from '../store/actions/authActions';
@@ -37,14 +37,19 @@ class Signup extends React.Component {
       confirmPassword: '',
       firstName: '',
       lastName: '',
-      message: '',
+      message: props.message,
       openModal: false,
-      isAdmin: false,
+      isAdmin: props.isAdmin || false,
+      isLoading: props.isLoading,
+      authStatus: props.authStatus,
     };
   }
 
+
   static getDerivedStateFromProps(nextProps, prevState) {
+    if (!nextProps.message) return null;
     if (prevState.message) return null;
+    // if (nextProps.message === this.props.message) return null;
     const {
       message, isLoading, authStatus, isAdmin,
     } = nextProps;
@@ -53,7 +58,11 @@ class Signup extends React.Component {
     };
   }
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value.trim() });
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.message !== prevState.message) this.setState({ openModal: true });
+  }
+
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
   validateInput = (payload, route) => {
     const result = validateFields(payload, route);
@@ -76,8 +85,6 @@ class Signup extends React.Component {
 
   render() {
     const { message, openModal, isLoading } = this.state;
-    const { history } = this.props;
-    if (message === 'Your signup was successful') return history.push('/user');
     return (
       <div className={style.signup__body}>
         <div className={style.content}>
@@ -97,6 +104,7 @@ class Signup extends React.Component {
                   resetState={this.resetState}
                   openModal={openModal}
                 />}
+                {(message === 'Your signup was successful') && <Redirect push to='/user' />}
                 <form
                   className={style.form__inputs}
                   onSubmit={this.submitData}
@@ -107,8 +115,7 @@ class Signup extends React.Component {
                       type="text"
                       name="lastName"
                       id="last-name"
-                      onChange={this.handleChange}
-                      value={this.state.lastName}
+                      onBlur={this.handleChange}
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -118,8 +125,7 @@ class Signup extends React.Component {
                       type="text"
                       name="firstName"
                       id="first-name"
-                      onChange={this.handleChange}
-                      value={this.state.firstName}
+                      onBlur={this.handleChange}
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -129,8 +135,7 @@ class Signup extends React.Component {
                       type="email"
                       name="email"
                       id="email"
-                      value={this.state.email}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -140,8 +145,7 @@ class Signup extends React.Component {
                       type="password"
                       name="password"
                       id="password"
-                      value={this.state.password}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       placeholder="******"
                     />
                   </div>

@@ -24,20 +24,19 @@ class AdminDashboard extends React.Component {
     editStatusAction: PropTypes.func.isRequired,
   }
 
-  state = {
-    message: '',
-    isLoading: false,
-    incidents: [],
-    isDetailsModalOpen: false,
-    incident: {},
-    isEditModalOpen: false,
-    disableStatus: true,
-    status: '',
-  }
-
-  componentDidMount() {
-    const { getIncidents: fetchIncidents, isAdmin, token } = this.props;
-    fetchIncidents(token, isAdmin);
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: '',
+      isLoading: false,
+      incidents: [],
+      isDetailsModalOpen: false,
+      incident: {},
+      isEditModalOpen: false,
+      disableStatus: true,
+      status: '',
+      openModal: false,
+    };
   }
 
   static getDerivedStateFromProps(nextProps) {
@@ -47,6 +46,14 @@ class AdminDashboard extends React.Component {
       incidents,
       incidentDetail: incident,
     } = nextProps;
+    if (incident.message) {
+      return {
+        message: incident.message,
+        isLoading: incident.isLoading,
+        incidents,
+        incident,
+      };
+    }
     return {
       message,
       isLoading,
@@ -54,6 +61,16 @@ class AdminDashboard extends React.Component {
       incident,
     };
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.message !== prevState.message) this.setState({ openModal: true });
+  }
+
+  componentDidMount() {
+    const { getIncidents: fetchIncidents, isAdmin, token } = this.props;
+    fetchIncidents(token, isAdmin);
+  }
+
 
   handleChange = (e) => {
     if (e.target.nodeName === 'TEXTAREA') return this.setState({ [e.target.name]: e.target.value });
@@ -99,6 +116,8 @@ class AdminDashboard extends React.Component {
     editStatus({ id, status });
   }
 
+  resetState = () => this.setState({ message: '', openModal: false });
+
   render() {
     const {
       incidents,
@@ -111,6 +130,8 @@ class AdminDashboard extends React.Component {
       location: incidentLocation,
       disableStatus,
       status: incidentStatus,
+      openModal,
+      message,
     } = this.state;
     const { location } = this.props;
     return (
@@ -132,6 +153,9 @@ class AdminDashboard extends React.Component {
           disableStatus={disableStatus}
           alterDisableStatus={this.alterDisableStatus}
           incidentStatus={incidentStatus}
+          resetState={this.resetState}
+          openModal={openModal}
+          message={message}
         />
       </div>
     );

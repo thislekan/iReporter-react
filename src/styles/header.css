@@ -17,16 +17,22 @@ nav{
   z-index: 3;
 }
 .ireporterLogo{
-    font-weight: 900;
-    letter-spacing: 0.5px;
-    line-height: 1.3;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+.login-link{
+  margin-right: 10px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 .navigation__wrapper div{
-    margin: 0 1rem;
-    display: flex;
-    align-items: center;
-    padding: 0 1rem;
-    justify-content: center;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  justify-content: center;
 }
 .navigationLinks{
     text-decoration: none;

@@ -186,7 +186,10 @@ exports[`<UserForm /> Should render all elements 1`] = `
                 }
               }
               mapUrl=""
+              message=""
               openCreateModal={[Function]}
+              openModal={false}
+              resetState={[Function]}
               showCreateButton={false}
             >
               <div>
@@ -205,16 +208,6 @@ exports[`<UserForm /> Should render all elements 1`] = `
                       shouldCloseOnOverlayClick={true}
                       shouldFocusAfterRender={true}
                       shouldReturnFocusAfterClose={true}
-                      style={
-                        Object {
-                          "content": Object {
-                            "left": "20px",
-                            "margin": "1rem 0",
-                            "padding": "10px",
-                            "right": "20px",
-                          },
-                        }
-                      }
                     >
                       <Portal
                         containerInfo={
@@ -264,12 +257,8 @@ exports[`<UserForm /> Should render all elements 1`] = `
                           shouldReturnFocusAfterClose={true}
                           style={
                             Object {
-                              "content": Object {
-                                "left": "20px",
-                                "margin": "1rem 0",
-                                "padding": "10px",
-                                "right": "20px",
-                              },
+                              "content": Object {},
+                              "overlay": Object {},
                             }
                           }
                         />
@@ -305,16 +294,6 @@ exports[`<UserForm /> Should render all elements 1`] = `
                     shouldCloseOnOverlayClick={true}
                     shouldFocusAfterRender={true}
                     shouldReturnFocusAfterClose={true}
-                    style={
-                      Object {
-                        "content": Object {
-                          "left": "20px",
-                          "margin": "1rem 0",
-                          "padding": "10px",
-                          "right": "20px",
-                        },
-                      }
-                    }
                   >
                     <Portal
                       containerInfo={
@@ -364,12 +343,8 @@ exports[`<UserForm /> Should render all elements 1`] = `
                         shouldReturnFocusAfterClose={true}
                         style={
                           Object {
-                            "content": Object {
-                              "left": "20px",
-                              "margin": "1rem 0",
-                              "padding": "10px",
-                              "right": "20px",
-                            },
+                            "content": Object {},
+                            "overlay": Object {},
                           }
                         }
                       />

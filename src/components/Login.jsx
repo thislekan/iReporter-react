@@ -31,30 +31,27 @@ export class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: false,
+      isLoading: props.isLoading || false,
       openModal: false,
-      message: '',
+      message: props.message,
       email: '',
       password: '',
-      isAdmin: false,
+      isAdmin: props.isAdmin || false,
     };
   }
 
   static getDerivedStateFromProps(nextProps) {
+    if (!nextProps.message) return null;
     const {
       message, isLoading, authStatus, isAdmin,
     } = nextProps;
-    if (!message) return null;
-
     return {
       message, isLoading, authStatus, isAdmin,
     };
   }
 
-  componentDidMount() {
-    const { message } = this.state;
-    if (message !== 'User successfully logged in') this.setState({ openModal: true });
-    return true;
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.message !== prevState.message) this.setState({ openModal: true });
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value.trim() });

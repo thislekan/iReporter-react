@@ -106,10 +106,9 @@ exports[`<UserForm /> Should render all elements 1`] = `
                         <input
                           id="last-name"
                           name="lastName"
-                          onChange={[Function]}
+                          onBlur={[Function]}
                           placeholder="Enter your last name"
                           type="text"
-                          value=""
                         />
                       </div>
                       <div>
@@ -121,10 +120,9 @@ exports[`<UserForm /> Should render all elements 1`] = `
                         <input
                           id="first-name"
                           name="firstName"
-                          onChange={[Function]}
+                          onBlur={[Function]}
                           placeholder="Enter your full name"
                           type="text"
-                          value=""
                         />
                       </div>
                       <div>
@@ -136,10 +134,9 @@ exports[`<UserForm /> Should render all elements 1`] = `
                         <input
                           id="email"
                           name="email"
-                          onChange={[Function]}
+                          onBlur={[Function]}
                           placeholder="Enter your email address"
                           type="email"
-                          value=""
                         />
                       </div>
                       <div>
@@ -151,10 +148,9 @@ exports[`<UserForm /> Should render all elements 1`] = `
                         <input
                           id="password"
                           name="password"
-                          onChange={[Function]}
+                          onBlur={[Function]}
                           placeholder="******"
                           type="password"
-                          value=""
                         />
                       </div>
                       <div>

@@ -14,25 +14,6 @@ import DashboardView from '../reuseables/DashboardView.jsx';
 import getMapUrl from '../../utils/geolocation';
 
 class UserDashboard extends React.Component {
-  state = {
-    isCreateModalOpen: false,
-    isDetailsModalOpen: false,
-    isDeleteModalOpen: false,
-    isEditModalOpen: false,
-    showCreateButton: false,
-    incidents: [],
-    imageBlobs: [],
-    videoBlob: '',
-    disableFileInput: false,
-    images: [],
-    video: [],
-    isLoading: false,
-    incident: {},
-    mapUrl: '',
-    disableComment: true,
-    disableLocation: true,
-  };
-
   static propTypes = {
     isCreateModalOpen: PropTypes.bool,
     isDetailsModalOpen: PropTypes.bool,
@@ -64,6 +45,30 @@ class UserDashboard extends React.Component {
     isLoggedIn: false,
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isCreateModalOpen: false,
+      isDetailsModalOpen: false,
+      isDeleteModalOpen: false,
+      isEditModalOpen: false,
+      showCreateButton: false,
+      incidents: [],
+      imageBlobs: [],
+      videoBlob: '',
+      disableFileInput: false,
+      images: [],
+      video: [],
+      incident: {},
+      mapUrl: '',
+      disableComment: true,
+      disableLocation: true,
+      message: props.message,
+      isLoading: props.isLoading,
+      openModal: false,
+    };
+  }
+
   static getDerivedStateFromProps(nextProps) {
     const {
       message,
@@ -72,7 +77,15 @@ class UserDashboard extends React.Component {
       incidentDetail: incident,
       isLoggedIn,
     } = nextProps;
-    if (incident.message) return { message: incident.message };
+    if (incident.message) {
+      return {
+        message: incident.message,
+        isLoading: incident.isLoading,
+        incidents,
+        incident,
+        isLoggedIn,
+      };
+    }
     return {
       message,
       isLoading,
@@ -80,6 +93,10 @@ class UserDashboard extends React.Component {
       incident,
       isLoggedIn,
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.message !== prevState.message) this.setState({ openModal: true });
   }
 
   componentDidMount() {
@@ -93,7 +110,15 @@ class UserDashboard extends React.Component {
     return this.setState({ [e.target.name]: e.target.value.trim() });
   }
 
-  resetState = () => this.setState({ message: '' });
+  resetState = () => {
+    const { isCreateModalOpen } = this.state;
+    const { getIncidents: fetchIncidents, token } = this.props;
+    if (isCreateModalOpen) {
+      this.setState({ isCreateModalOpen: false, message: '' });
+      fetchIncidents(token, false);
+    }
+    this.setState({ message: '', openModal: false });
+  }
 
   clearBlobs = () => this.setState({ imageBlobs: [], videoBlob: [] });
 
@@ -252,6 +277,7 @@ class UserDashboard extends React.Component {
       location: incidentLocation,
       isLoggedIn,
       message,
+      openModal,
     } = this.state;
     return (
       <DashboardView
@@ -288,6 +314,7 @@ class UserDashboard extends React.Component {
         isLoggedIn={isLoggedIn}
         message={message}
         resetState={this.resetState}
+        openModal={openModal}
       />
     );
   }
