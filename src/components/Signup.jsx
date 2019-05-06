@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as authSelector from '../store/selectors/authSelector';
 import { authenticateUser } from '../store/actions/authActions';
@@ -45,6 +45,7 @@ class Signup extends React.Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (prevState.message) return null;
+    // if (prevState.message === 'Your password cannot be empty') return null;
     const {
       message, isLoading, authStatus, isAdmin,
     } = nextProps;
@@ -53,7 +54,7 @@ class Signup extends React.Component {
     };
   }
 
-  handleChange = e => this.setState({ [e.target.name]: e.target.value.trim() });
+  handleChange = e => this.setState({ [e.target.name]: e.target.value });
 
   validateInput = (payload, route) => {
     const result = validateFields(payload, route);
@@ -72,12 +73,13 @@ class Signup extends React.Component {
     if (this.validateInput(payload, '/signup')) return signupUser({ payload, route: 'user/create' });
   }
 
-  resetState = () => this.setState({ message: '', openModal: false });
+  resetState = () => {
+    console.log('hello');
+    this.setState({ message: '', openModal: false });
+  }
 
   render() {
     const { message, openModal, isLoading } = this.state;
-    const { history } = this.props;
-    if (message === 'Your signup was successful') return history.push('/user');
     return (
       <div className={style.signup__body}>
         <div className={style.content}>
@@ -91,6 +93,7 @@ class Signup extends React.Component {
                   <div><Link className={style.links} to={'/signup'}>Sign Up</Link></div>
                   <div><Link className={style.links} to={'/login'}>Log In</Link></div>
                 </div>
+                {(message === 'Your signup was successful') && <Redirect push to="/user" />}
                 {isLoading && <Loader isLoading={isLoading} />}
                 {message && <AlertMessage
                   message={message}
