@@ -22,11 +22,10 @@ describe('<DashboardView />', () => {
         deleteIncident={mockFn}
         alterDeleteModal={mockFn}
         resetState={mockFn}
-        message=""
+        message="Incident successfully created"
         openModal={false}
       />,
     );
-    // console.log(wrapper.debug());
     expect(wrapper).toMatchSnapshot();
   });
 });

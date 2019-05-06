@@ -56,7 +56,9 @@ function DashboardView(props) {
     message,
     resetState,
     openModal,
+    incidentType,
   } = props;
+
   return (
     <div className={style.user__dashboard}>
       <div className={style['padded-body']}>
@@ -119,6 +121,7 @@ function DashboardView(props) {
               disableStatus={disableStatus}
               alterDisableStatus={alterDisableStatus}
               incidentStatus={incidentStatus}
+              incidentType={incidentType}
             />
           </Modal>
         </div>
@@ -187,13 +190,14 @@ function DashboardView(props) {
         </Modal>
         <div className={style.body__content}>
           {
-            (message && message !== 'Incidents successfully fetched') && <Modal
+            (message && (message === 'Token is invalid' && message === 'Incidents successfully fetched' && message === 'Incident successfully fetched')) && <Modal
               isOpen={openModal}
               onRequestClose={resetState}
               className={modalStyle['notification-modal-box']}
             >
               <p>{message}</p>
               <button
+                id='clear-msg'
                 onClick={resetState}
               >
                 OK
@@ -275,6 +279,7 @@ DashboardView.propTypes = {
   openModal: PropTypes.bool.isRequired,
   message: PropTypes.string.isRequired,
   resetState: PropTypes.func.isRequired,
+  incidentType: PropTypes.string,
 };
 
 DashboardView.defaultProps = {
@@ -302,6 +307,7 @@ DashboardView.defaultProps = {
   disableStatus: true,
   alterDisableStatus: f => f,
   incidentStatus: '',
+  incidentType: '',
 };
 
 export default DashboardView;

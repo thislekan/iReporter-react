@@ -14,9 +14,9 @@ function ReportDetails(props) {
           <div className={style['report-details']}>
             <div className={style['incident-intro']}>
               <FontAwesomeIcon icon='check-circle' />
-              <h4>ID: </h4>
+              <h4>Title: </h4>
             </div>
-            <p id="incident-id">{incident.id}</p>
+            <p id="incident-title">{incident.title}</p>
           </div>
           <div className={style['report-details']}>
             <div className={style['incident-intro']}>
@@ -30,7 +30,7 @@ function ReportDetails(props) {
               <FontAwesomeIcon icon='check-circle' />
               <h4>Created: </h4>
             </div>
-            <p id="incident-date">{moment(Number(incident.createdOn)).format('MMM Do YY')}</p>
+            {(!incident.createdOn) ? <p>{' '}</p> : <p id="incident-date">{moment(Number(incident.createdOn)).format('MMMM Do YYYY')}</p>}
           </div>
           <div className={style['report-details']}>
             <div className={style['incident-intro']}>
@@ -38,13 +38,6 @@ function ReportDetails(props) {
               <h4>Status: </h4>
             </div>
             <p id="incident-status">{incident.status}</p>
-          </div>
-          <div className={style['report-details']}>
-            <div className={style['incident-intro']}>
-              <FontAwesomeIcon icon='check-circle' />
-              <h4>Title: </h4>
-            </div>
-            <p id="incident-title">{incident.title}</p>
           </div>
           <div className={style['location-div']}>
             <div className={style['report-details']}>

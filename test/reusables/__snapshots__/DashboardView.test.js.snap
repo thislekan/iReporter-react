@@ -140,6 +140,7 @@ exports[`<DashboardView /> should render DashboardView 1`] = `
           }
           incidentLocation=""
           incidentStatus=""
+          incidentType=""
           location={
             Object {
               "pathname": "/user",

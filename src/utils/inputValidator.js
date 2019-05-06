@@ -33,9 +33,9 @@ const validateFields = (payload, route) => {
       return errorMessage;
     }
 
-    const emptyPasswordConfirmCheck = validator.isEmpty(payload.confirmPassword);
+    const emptyPasswordConfirmCheck = validator.isEmpty(payload.confirmPassword.trim());
     if (emptyPasswordConfirmCheck) {
-      errorMessage = 'Please confirm your password is correct';
+      errorMessage = 'Your password cannot be empty';
       return errorMessage;
     }
 

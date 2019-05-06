@@ -75,6 +75,7 @@ class Signup extends React.Component {
 
   // eslint-disable-next-line consistent-return
   submitData = (e) => {
+    this.setState({ message: '' });
     const { authenticateUser: signupUser } = this.props;
     const payload = this.state;
     e.preventDefault();
@@ -98,6 +99,7 @@ class Signup extends React.Component {
                   <div><Link className={style.links} to={'/signup'}>Sign Up</Link></div>
                   <div><Link className={style.links} to={'/login'}>Log In</Link></div>
                 </div>
+                {(message === 'Your signup was successful') && <Redirect push to="/user" />}
                 {isLoading && <Loader isLoading={isLoading} />}
                 {message && <AlertMessage
                   message={message}

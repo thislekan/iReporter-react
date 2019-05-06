@@ -19,6 +19,7 @@ function EditReport(props) {
     disableStatus,
     alterDisableStatus,
     incidentStatus,
+    incidentType,
   } = props;
   return (
     <div className={style.editReport}>
@@ -38,14 +39,25 @@ function EditReport(props) {
                 <FontAwesomeIcon icon='check-circle' />
                 <h4>Type: </h4>
               </div>
-              <p id="incident-type">{incident.type}</p>
+              <select
+                name="incidentType"
+                id="incident-type"
+                onChange={handleChange}
+                onBlur={handleChange}
+                disabled={(location.pathname === '/admin')}
+                value={incidentType || incident.type}
+              >
+                <option value="">Select type</option>
+                <option value="red-flag">Red flag</option>
+                <option value="intervention">Intervention</option>
+              </select>
             </div>
             <div className={style['report-details']}>
               <div className={style['incident-intro']}>
                 <FontAwesomeIcon icon='check-circle' />
                 <h4>Created: </h4>
               </div>
-              <p id="incident-date">{moment(Number(incident.createdOn)).format('MMMM Do YYYY')}</p>
+              {(!incident.createdOn) ? <p>{' '}</p> : <p id="incident-date">{moment(Number(incident.createdOn)).format('MMMM Do YYYY')}</p>}
             </div>
             {
               (location.pathname !== '/admin') ? null : <div className={style['report-details']}>
@@ -141,6 +153,7 @@ EditReport.propTypes = {
   disableStatus: PropTypes.bool.isRequired,
   alterDisableStatus: PropTypes.func.isRequired,
   incidentStatus: PropTypes.string.isRequired,
+  incidentType: PropTypes.string.isRequired,
 };
 
 export default EditReport;

@@ -66,6 +66,7 @@ class UserDashboard extends React.Component {
       message: props.message,
       isLoading: props.isLoading,
       openModal: false,
+      incidentType: props.incidentDetail.type,
     };
   }
 
@@ -206,15 +207,19 @@ class UserDashboard extends React.Component {
   }
 
   postComment = (id, type) => {
-    const { comment } = this.state;
+    const { comment, incidentType } = this.state;
     const { editCommentAction: editComment } = this.props;
-    editComment({ id, type, comment });
+    editComment({
+      id, type, comment, newType: incidentType,
+    });
   }
 
   postLocation = (id, type) => {
-    const { location } = this.state;
+    const { location, incidentType } = this.state;
     const { editLocationAction: editLocation } = this.props;
-    editLocation({ id, type, location });
+    editLocation({
+      id, type, location, newType: incidentType,
+    });
   }
 
   gatherData = () => {
@@ -278,6 +283,7 @@ class UserDashboard extends React.Component {
       isLoggedIn,
       message,
       openModal,
+      incidentType,
     } = this.state;
     return (
       <DashboardView
@@ -315,6 +321,7 @@ class UserDashboard extends React.Component {
         message={message}
         resetState={this.resetState}
         openModal={openModal}
+        incidentType={incidentType}
       />
     );
   }

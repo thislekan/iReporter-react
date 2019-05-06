@@ -7,10 +7,12 @@ export const loading = (type, status) => ({ type, status });
 export const editLocationSuccess = (type, data) => ({ type, data });
 export const editLocationFailure = (type, message) => ({ type, message });
 
-export const editLocationAction = ({ id, type, location }) => async (dispatch) => {
+export const editLocationAction = ({
+  id, type, location, newType,
+}) => async (dispatch) => {
   const route = `${type}/location/${id}`;
   const verb = 'patch';
-  const payload = { location };
+  const payload = { location, type: newType };
 
   try {
     dispatch(loading(incidentType.loading, true));

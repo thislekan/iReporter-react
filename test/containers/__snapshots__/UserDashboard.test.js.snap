@@ -122,6 +122,7 @@ exports[`<UserForm /> Should render all elements 1`] = `
             }
             incidentLocation=""
             incidentStatus=""
+            incidentType=""
             incidents={Array []}
             isCreateModalOpen={false}
             isDeleteModalOpen={false}

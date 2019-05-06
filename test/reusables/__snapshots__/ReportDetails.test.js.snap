@@ -29,14 +29,12 @@ exports[`<ReportDetails /> should render ReportDetails 1`] = `
             transform={null}
           />
           <h4>
-            ID: 
+            Title: 
           </h4>
         </div>
         <p
-          id="incident-id"
-        >
-          2
-        </p>
+          id="incident-title"
+        />
       </div>
       <div>
         <div>
@@ -90,10 +88,8 @@ exports[`<ReportDetails /> should render ReportDetails 1`] = `
             Created: 
           </h4>
         </div>
-        <p
-          id="incident-date"
-        >
-          Jan 1st 70
+        <p>
+           
         </p>
       </div>
       <div>
@@ -122,34 +118,6 @@ exports[`<ReportDetails /> should render ReportDetails 1`] = `
         </div>
         <p
           id="incident-status"
-        />
-      </div>
-      <div>
-        <div>
-          <FontAwesomeIcon
-            border={false}
-            className=""
-            fixedWidth={false}
-            flip={null}
-            icon="check-circle"
-            inverse={false}
-            listItem={false}
-            mask={null}
-            pull={null}
-            pulse={false}
-            rotation={null}
-            size={null}
-            spin={false}
-            symbol={false}
-            title=""
-            transform={null}
-          />
-          <h4>
-            Title: 
-          </h4>
-        </div>
-        <p
-          id="incident-title"
         />
       </div>
       <div>
@@ -272,14 +240,12 @@ exports[`<ReportDetails /> should render a different content when the route is /
             transform={null}
           />
           <h4>
-            ID: 
+            Title: 
           </h4>
         </div>
         <p
-          id="incident-id"
-        >
-          2
-        </p>
+          id="incident-title"
+        />
       </div>
       <div>
         <div>
@@ -333,10 +299,8 @@ exports[`<ReportDetails /> should render a different content when the route is /
             Created: 
           </h4>
         </div>
-        <p
-          id="incident-date"
-        >
-          Jan 1st 70
+        <p>
+           
         </p>
       </div>
       <div>
@@ -365,34 +329,6 @@ exports[`<ReportDetails /> should render a different content when the route is /
         </div>
         <p
           id="incident-status"
-        />
-      </div>
-      <div>
-        <div>
-          <FontAwesomeIcon
-            border={false}
-            className=""
-            fixedWidth={false}
-            flip={null}
-            icon="check-circle"
-            inverse={false}
-            listItem={false}
-            mask={null}
-            pull={null}
-            pulse={false}
-            rotation={null}
-            size={null}
-            spin={false}
-            symbol={false}
-            title=""
-            transform={null}
-          />
-          <h4>
-            Title: 
-          </h4>
-        </div>
-        <p
-          id="incident-title"
         />
       </div>
       <div>

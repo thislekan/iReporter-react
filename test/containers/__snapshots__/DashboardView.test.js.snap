@@ -82,6 +82,7 @@ exports[`<UserForm /> Should render all elements 1`] = `
         }
         incidentLocation=""
         incidentStatus=""
+        incidentType=""
         incidents={
           Array [
             Object {
@@ -627,7 +628,9 @@ exports[`<UserForm /> Should render all elements 1`] = `
                                 Date: 
                               </h4>
                             </div>
-                            <p>
+                            <p
+                              id="incident-date"
+                            >
                               Invalid date
                             </p>
                           </div>

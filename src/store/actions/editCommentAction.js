@@ -7,10 +7,12 @@ export const loading = (type, status) => ({ type, status });
 export const editCommentSuccess = (type, data) => ({ type, data });
 export const editCommentFailure = (type, message) => ({ type, message });
 
-export const editCommentAction = ({ id, type, comment }) => async (dispatch) => {
+export const editCommentAction = ({
+  id, type, comment, newType,
+}) => async (dispatch) => {
   const route = `${type}/comment/${id}`;
   const verb = 'patch';
-  const payload = { comment };
+  const payload = { comment, type: newType };
 
   try {
     dispatch(loading(incidentType.loading, true));
