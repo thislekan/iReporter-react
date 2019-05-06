@@ -29,8 +29,8 @@ cd iReporter-react (or the name of the folder you zipped the files in)
 
 # see the 'few things to note' section from above and provide data for the GOOGLE_API_KEY field
 
-```
 API_URL = https://ireporter-endpoint.herokuapp.com/api/v2/
+
 GOOGLE_API_KEY = get a Google map API key
 
 ```
