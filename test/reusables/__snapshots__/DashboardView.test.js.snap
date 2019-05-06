@@ -19,15 +19,6 @@ exports[`<DashboardView /> should render DashboardView 1`] = `
         shouldCloseOnOverlayClick={true}
         shouldFocusAfterRender={true}
         shouldReturnFocusAfterClose={true}
-        style={
-          Object {
-            "content": Object {
-              "left": "20px",
-              "margin": "1rem 0",
-              "right": "20px",
-            },
-          }
-        }
       >
         <div
           aria-hidden={true}
@@ -85,16 +76,6 @@ exports[`<DashboardView /> should render DashboardView 1`] = `
         shouldCloseOnOverlayClick={true}
         shouldFocusAfterRender={true}
         shouldReturnFocusAfterClose={true}
-        style={
-          Object {
-            "content": Object {
-              "left": "20px",
-              "margin": "1rem 0",
-              "padding": "10px",
-              "right": "20px",
-            },
-          }
-        }
       >
         <div
           aria-hidden={true}
@@ -159,6 +140,7 @@ exports[`<DashboardView /> should render DashboardView 1`] = `
           }
           incidentLocation=""
           incidentStatus=""
+          incidentType=""
           location={
             Object {
               "pathname": "/user",
@@ -236,16 +218,6 @@ exports[`<DashboardView /> should render DashboardView 1`] = `
       shouldCloseOnOverlayClick={true}
       shouldFocusAfterRender={true}
       shouldReturnFocusAfterClose={true}
-      style={
-        Object {
-          "content": Object {
-            "left": "20px",
-            "margin": "1rem 0",
-            "padding": "10px",
-            "right": "20px",
-          },
-        }
-      }
     >
       <div
         aria-hidden={true}

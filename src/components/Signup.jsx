@@ -37,21 +37,29 @@ class Signup extends React.Component {
       confirmPassword: '',
       firstName: '',
       lastName: '',
-      message: '',
+      message: props.message,
       openModal: false,
-      isAdmin: false,
+      isAdmin: props.isAdmin || false,
+      isLoading: props.isLoading,
+      authStatus: props.authStatus,
     };
   }
 
+
   static getDerivedStateFromProps(nextProps, prevState) {
+    if (!nextProps.message) return null;
     if (prevState.message) return null;
-    // if (prevState.message === 'Your password cannot be empty') return null;
+    // if (nextProps.message === this.props.message) return null;
     const {
       message, isLoading, authStatus, isAdmin,
     } = nextProps;
     return {
       message, isLoading, authStatus, isAdmin,
     };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.message !== prevState.message) this.setState({ openModal: true });
   }
 
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -67,16 +75,14 @@ class Signup extends React.Component {
 
   // eslint-disable-next-line consistent-return
   submitData = (e) => {
+    this.setState({ message: '' });
     const { authenticateUser: signupUser } = this.props;
     const payload = this.state;
     e.preventDefault();
     if (this.validateInput(payload, '/signup')) return signupUser({ payload, route: 'user/create' });
   }
 
-  resetState = () => {
-    console.log('hello');
-    this.setState({ message: '', openModal: false });
-  }
+  resetState = () => this.setState({ message: '', openModal: false });
 
   render() {
     const { message, openModal, isLoading } = this.state;
@@ -100,6 +106,7 @@ class Signup extends React.Component {
                   resetState={this.resetState}
                   openModal={openModal}
                 />}
+                {(message === 'Your signup was successful') && <Redirect push to='/user' />}
                 <form
                   className={style.form__inputs}
                   onSubmit={this.submitData}
@@ -110,8 +117,7 @@ class Signup extends React.Component {
                       type="text"
                       name="lastName"
                       id="last-name"
-                      onChange={this.handleChange}
-                      value={this.state.lastName}
+                      onBlur={this.handleChange}
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -121,8 +127,7 @@ class Signup extends React.Component {
                       type="text"
                       name="firstName"
                       id="first-name"
-                      onChange={this.handleChange}
-                      value={this.state.firstName}
+                      onBlur={this.handleChange}
                       placeholder="Enter your full name"
                     />
                   </div>
@@ -132,8 +137,7 @@ class Signup extends React.Component {
                       type="email"
                       name="email"
                       id="email"
-                      value={this.state.email}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -143,8 +147,7 @@ class Signup extends React.Component {
                       type="password"
                       name="password"
                       id="password"
-                      value={this.state.password}
-                      onChange={this.handleChange}
+                      onBlur={this.handleChange}
                       placeholder="******"
                     />
                   </div>

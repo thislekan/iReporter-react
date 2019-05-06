@@ -71,6 +71,7 @@
     "reduce-reducers": "^1.0.1",
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
+    "redux-persist-transform-filter": "0.0.18",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
     "validator": "^10.11.0"

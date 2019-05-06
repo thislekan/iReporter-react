@@ -40,7 +40,7 @@ function SingleReport(props) {
             <FontAwesomeIcon icon='check-circle' />
             <h4>Date: </h4>
           </div>
-          <p>{moment(Number(createdOn)).format('MMMM Do YYYY')}</p>
+          {(!createdOn) ? <p>{' '}</p> : <p id="incident-date">{moment(Number(createdOn)).format('MMMM Do YYYY')}</p>}
         </div>
         <div className={style['report-details']}>
           <div className={style['incident-intro']}>

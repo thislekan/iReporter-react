@@ -13,6 +13,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 const dotenvPlugin = new Dotenv();
 const envLoaderPlugin = new webpack.DefinePlugin({
   'process.env.API_URL': JSON.stringify(process.env.API_URL),
+  'process.env.GOOGLE_API_KEY': JSON.stringify(process.env.GOOGLE_API_KEY),
 });
 const usedMomemntPlugin = new MomentLocalePlugin();
 

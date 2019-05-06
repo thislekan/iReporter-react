@@ -7,12 +7,12 @@ function AlertMessage(props) {
   return (
     <div>
       {openModal && (
-        <div className={style.modal}>
-          <div className={style.modal_body}>
+        <div className={style.alert}>
+          <div className={style.alert_body}>
             <p>{message}</p>
             <button
               onClick={resetState}
-              className={style.modal_btn}
+              className={style.alert_btn}
               id='alert-msg-btn'
             >
               OK

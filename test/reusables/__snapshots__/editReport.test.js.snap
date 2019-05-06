@@ -68,11 +68,30 @@ exports[`<SingleReport /> should render EditReport 1`] = `
               Type: 
             </h4>
           </div>
-          <p
+          <select
+            disabled={false}
             id="incident-type"
+            name="incidentType"
+            onBlur={[MockFunction]}
+            onChange={[MockFunction]}
+            value="red-flag"
           >
-            red-flag
-          </p>
+            <option
+              value=""
+            >
+              Select type
+            </option>
+            <option
+              value="red-flag"
+            >
+              Red flag
+            </option>
+            <option
+              value="intervention"
+            >
+              Intervention
+            </option>
+          </select>
         </div>
         <div>
           <div>
@@ -223,11 +242,30 @@ exports[`<SingleReport /> should render a different content when pathname is Adm
               Type: 
             </h4>
           </div>
-          <p
+          <select
+            disabled={true}
             id="incident-type"
+            name="incidentType"
+            onBlur={[MockFunction]}
+            onChange={[MockFunction]}
+            value="red-flag"
           >
-            red-flag
-          </p>
+            <option
+              value=""
+            >
+              Select type
+            </option>
+            <option
+              value="red-flag"
+            >
+              Red flag
+            </option>
+            <option
+              value="intervention"
+            >
+              Intervention
+            </option>
+          </select>
         </div>
         <div>
           <div>
@@ -312,7 +350,7 @@ exports[`<SingleReport /> should render a different content when pathname is Adm
               Rejected
             </option>
             <option
-              value="resolced"
+              value="resolved"
             >
               Resolved
             </option>

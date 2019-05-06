@@ -83,7 +83,9 @@ exports[`<SingleReport /> should render SingleReport 1`] = `
           Date: 
         </h4>
       </div>
-      <p>
+      <p
+        id="incident-date"
+      >
         Invalid date
       </p>
     </div>
@@ -252,7 +254,9 @@ exports[`<SingleReport /> should render a different content when route is Admin 
           Date: 
         </h4>
       </div>
-      <p>
+      <p
+        id="incident-date"
+      >
         Invalid date
       </p>
     </div>

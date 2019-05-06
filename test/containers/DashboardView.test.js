@@ -18,16 +18,23 @@ describe('<UserForm />', () => {
         isLoading={false}
         handleChange={mockFn}
         deleteIncident={mockFn}
+        alterDeleteModal={mockFn}
         isDetailsModalOpen={false}
         closeDetailsModal={mockFn}
         fetchIncident={mockFn}
+        alterEditModal={mockFn}
         incident={mockIncident}
         imageBlobs={[]}
+        openModal={false}
+        message=""
+        resetState={mockFn}
       />,
     );
     expect(wrapper).toMatchSnapshot();
     DashboardView.defaultProps.deleteIncident = mockFn;
     DashboardView.defaultProps.deleteIncident();
+    const deleteBtn = wrapper.find('#delete_btn');
+    deleteBtn.simulate('click', { deleteIncident: f => f });
     expect(mockFn).toHaveBeenCalled();
   });
 });

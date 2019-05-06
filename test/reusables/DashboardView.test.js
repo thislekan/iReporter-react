@@ -21,9 +21,11 @@ describe('<DashboardView />', () => {
         imageBlobs={mock.images}
         deleteIncident={mockFn}
         alterDeleteModal={mockFn}
+        resetState={mockFn}
+        message="Incident successfully created"
+        openModal={false}
       />,
     );
-    // console.log(wrapper.debug());
     expect(wrapper).toMatchSnapshot();
   });
 });
