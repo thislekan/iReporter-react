@@ -63,7 +63,7 @@ exports[`<CreateReport /> should render the index 1`] = `
           </label>
           <textarea
             id="comments"
-            name="comments"
+            name="comment"
             onBlur={[MockFunction]}
           />
         </div>

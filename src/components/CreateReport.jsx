@@ -43,7 +43,7 @@ function CreateReport(props) {
             <div className={cx(style['input-div'], style['for-text'])}>
               <label htmlFor="comments">Enter comments</label>
               <textarea
-                name="comments"
+                name="comment"
                 id="comments"
                 onBlur={handleChange}
               />
