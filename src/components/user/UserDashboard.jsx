@@ -78,6 +78,7 @@ class UserDashboard extends React.Component {
       incidentDetail: incident,
       isLoggedIn,
     } = nextProps;
+
     if (incident.message) {
       return {
         message: incident.message,
@@ -87,6 +88,7 @@ class UserDashboard extends React.Component {
         isLoggedIn,
       };
     }
+
     return {
       message,
       isLoading,
@@ -236,11 +238,17 @@ class UserDashboard extends React.Component {
     return incidentForm;
   }
 
-  handleCreateIncident = (e) => {
+  handleCreateIncident = async (e) => {
     const { createIncident: createReport } = this.props;
     e.preventDefault();
     const data = this.gatherData();
-    createReport(data);
+    const response = await createReport(data);
+    const { isCreateModalOpen } = this.state;
+    const { getIncidents: fetchIncidents } = this.props;
+    if (isCreateModalOpen && response.type === 'CREATE_INCIDENT_SUCCESS') {
+      this.setState({ isCreateModalOpen: false, message: '' });
+      fetchIncidents(null, false);
+    }
   }
 
   fetchIncident = async (id, location) => {
