@@ -80,9 +80,9 @@ The available routes are as follows:
 
 ### Available features
 
-The following are the list of features available to users
-```
-# Create an incident
+> The following are the list of features available to users
+
+##### Create an incident
   - includes ability to upload images relating to an incident
   - accepts both coordinates and actual addresses for incident location
   - includes a comment section for a brief description of an incident
@@ -90,29 +90,28 @@ The following are the list of features available to users
     - Interventions
     - Red flags
 
-# Edit an incident
+##### Edit an incident
   - permits the ability to edit a report's type, location and comment while it's still a draft
 
-# Delete an incident
+##### Delete an incident
   - Only incidents with a status of `draft` can be deleted by a user
 
-# Read/View an incident
+##### Read/View an incident
   - Includes status, date of creation, location's map, comments and attached images
-```
 
-The following are features available to the admin
-```
-# Edit incident status
+
+> The following are features available to the admin
+
+##### Edit incident status
   - can edit a status from draft to a list of availbale status
 
-> The following status are currently available to the admin
+- The following status are currently available to the admin
   - draft
   - under investigation
   - resolved
   - rejected
 
-# Read/View an incident
+##### Read/View an incident
   - Includes status, date of creation, location's map, comments and attached images
 
-```
   
