@@ -62,18 +62,18 @@ The available routes are as follows:
 
 ### General
 
-`/` - iReporter's homepage
-`/signup` - for users to sign up
-`/login` - for admin and users to login
+/ - iReporter's homepage
+/signup - for users to sign up
+/login - for admin and users to login
 
 ### Users (for authentication)
 
-`/user` - Users dashboard
+/user - Users dashboard
 
 
 ### Admin
 
-`/admin` - the admin dashboard page
+/admin - the admin dashboard page
 ```
 
 ---
